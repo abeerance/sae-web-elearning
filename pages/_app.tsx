@@ -1,8 +1,15 @@
-import '../styles/globals.css';
-import type { AppProps } from 'next/app';
+import { createTheme, ThemeProvider } from '@mui/material';
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
-import { SessionContextProvider, Session } from '@supabase/auth-helpers-react';
+import { Session, SessionContextProvider } from '@supabase/auth-helpers-react';
+import type { AppProps } from 'next/app';
 import { useState } from 'react';
+import '../styles/globals.css';
+
+const webAppTheme = createTheme({
+  typography: {
+    fontFamily: ['Ubuntu', 'sans-serif'].join(','),
+  },
+});
 
 export default function App({
   Component,
@@ -14,7 +21,9 @@ export default function App({
       supabaseClient={supabase}
       initialSession={pageProps.initialSession}
     >
-      <Component {...pageProps} />
+      <ThemeProvider theme={webAppTheme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </SessionContextProvider>
   );
 }
