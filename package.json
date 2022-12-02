@@ -14,6 +14,8 @@
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.16",
     "@prisma/client": "^4.7.0",
+    "@tiptap/react": "^2.0.0-beta.204",
+    "@tiptap/starter-kit": "^2.0.0-beta.204",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
