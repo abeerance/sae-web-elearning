@@ -4,6 +4,7 @@ import { AppHome } from '../../organisms/content-pages/app-home';
 type ContentSectionProps = {
   suppressHydrationWarning: boolean;
   sidebarWidth: number;
+  currentNav: string;
 };
 
 export const ContentSection = ({ sidebarWidth }: ContentSectionProps) => {

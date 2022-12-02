@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Navigation } from '../../molecules/navigation/navigation';
 import { SearchBar } from '../../molecules/searchbar/searchbar';
@@ -6,9 +7,10 @@ import { UserBar } from '../../molecules/user-bar/user-bar';
 
 type SidebarProps = {
   sidebarWidth: number;
+  setCurrentNav: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Sidebar = ({ sidebarWidth }: SidebarProps) => {
+const Sidebar = ({ sidebarWidth, setCurrentNav }: SidebarProps) => {
   const { t } = useTranslation();
 
   return (
@@ -63,7 +65,7 @@ const Sidebar = ({ sidebarWidth }: SidebarProps) => {
         {t('navigation.welcome')}
       </Typography>
       <SearchBar />
-      <Navigation />
+      <Navigation setCurrentNav={setCurrentNav} />
       <UserBar />
     </Box>
   );
