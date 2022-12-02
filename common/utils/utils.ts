@@ -33,4 +33,6 @@ export class Globals {
     'ES Modules and structure',
     'Exercises',
   ];
+
+  public static readonly subNavigation = [];
 }

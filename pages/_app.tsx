@@ -3,6 +3,7 @@ import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import { Session, SessionContextProvider } from '@supabase/auth-helpers-react';
 import type { AppProps } from 'next/app';
 import { useState } from 'react';
+import '../common/i18n/config';
 import '../styles/globals.css';
 
 const webAppTheme = createTheme({

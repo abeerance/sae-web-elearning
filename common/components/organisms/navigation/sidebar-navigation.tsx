@@ -1,7 +1,10 @@
 import { Box, Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import { UserBar } from '../../molecules/user-bar/user-bar';
 
 const SideBar = () => {
+  const { t } = useTranslation();
+
   return (
     <Box
       sx={{
@@ -18,7 +21,7 @@ const SideBar = () => {
       }}
     >
       <Typography sx={{ fontWeight: 700, fontSize: '24px' }}>
-        JavaScript Overview
+        {t('navigation.welcome')}
       </Typography>
       <UserBar />
     </Box>
