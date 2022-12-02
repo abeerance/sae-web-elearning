@@ -9,7 +9,7 @@ export const AppHome = () => {
 
   return (
     <>
-      <H1Text title="JavaScript Notes and References" />
+      <H1Text title="JavaScript Notes and References" boxWidth={400} />
       <Box sx={{ marginY: '5rem' }}>
         <Paragraph text={t('home.welcome1')} />
         <Paragraph text={t('home.welcome2')} />

@@ -3,9 +3,10 @@ import { useTranslation } from 'react-i18next';
 
 type H2TextProps = {
   title: string;
+  sectionNames?: boolean;
 };
 
-export const H2Text = ({ title }: H2TextProps) => {
+export const H2Text = ({ title, sectionNames }: H2TextProps) => {
   const { t } = useTranslation();
 
   return (
@@ -19,7 +20,7 @@ export const H2Text = ({ title }: H2TextProps) => {
         variant="h2"
         sx={{ fontStyle: 'italic', fontSize: '30px', fontWeight: 500 }}
       >
-        {t(`sections.${title}.name`)}
+        {sectionNames ? t(`sections.${title}.name`) : title}
       </Typography>
       <Box
         sx={{

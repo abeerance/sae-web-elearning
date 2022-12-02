@@ -1,6 +1,8 @@
 import { Box } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { AppHome } from '../../organisms/content-pages/app-home';
+import Basics from '../../organisms/content-pages/basics';
+import { VariablesAndStatements } from '../../organisms/content-pages/variables-and-statements';
 
 type ContentSectionProps = {
   suppressHydrationWarning: boolean;
@@ -11,6 +13,7 @@ type ContentSectionProps = {
 
 export const ContentSection = ({
   sidebarWidth,
+  currentNav,
   navCollapsed,
 }: ContentSectionProps) => {
   const [contentWidth, setContentWidth] = useState<number>();
@@ -24,7 +27,6 @@ export const ContentSection = ({
     }
   }, [navCollapsed, sidebarWidth]);
 
-  console.log(contentWidth);
   return (
     <Box
       sx={{
@@ -34,7 +36,15 @@ export const ContentSection = ({
         overflowY: 'scroll',
       }}
     >
-      <AppHome />
+      {currentNav === 'home' ? (
+        <AppHome />
+      ) : currentNav === 'basics' ? (
+        <Basics />
+      ) : currentNav === 'variables' ? (
+        <VariablesAndStatements />
+      ) : (
+        <AppHome />
+      )}
     </Box>
   );
 };

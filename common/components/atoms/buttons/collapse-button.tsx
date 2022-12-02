@@ -14,7 +14,7 @@ export const CollapseButton = ({
   setNavCollapsed,
 }: CollapseButtonProps) => {
   const collapseButtonPosition = sidebarWidth - 25;
-  console.log(collapseButtonPosition);
+
   return (
     <Box
       component="button"

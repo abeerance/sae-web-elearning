@@ -8,7 +8,7 @@ type NavigationProos = {
 
 export const Navigation = ({ setCurrentNav }: NavigationProos) => {
   const handleNavigationChange = (topic: string) => {
-    console.log(topic);
+    setCurrentNav(topic);
   };
 
   return (

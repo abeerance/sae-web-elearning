@@ -2,9 +2,10 @@ import { Box, Typography } from '@mui/material';
 
 type H1TextProps = {
   title: string;
+  boxWidth: number;
 };
 
-export const H1Text = ({ title }: H1TextProps) => {
+export const H1Text = ({ title, boxWidth }: H1TextProps) => {
   return (
     <Box
       sx={{
@@ -25,7 +26,7 @@ export const H1Text = ({ title }: H1TextProps) => {
       <Box
         sx={{
           height: '10px',
-          width: '500px',
+          width: `${boxWidth}px`,
           background: '#F58700',
           position: 'absolute',
           bottom: 2,

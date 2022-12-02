@@ -8,7 +8,7 @@ export const SectionContent = () => {
     <>
       {Globals.sectionContents.map((topic) => (
         <Box key={topic.name}>
-          <H2Text title={topic.name} />
+          <H2Text title={topic.name} sectionNames />
           {topic.subTopics.map((subTopic, index) => (
             <SectionSubTopic
               key={index}
