@@ -9,6 +9,7 @@ import '../styles/globals.css';
 const webAppTheme = createTheme({
   typography: {
     fontFamily: ['Ubuntu', 'sans-serif'].join(','),
+    fontSize: 16,
   },
 });
 

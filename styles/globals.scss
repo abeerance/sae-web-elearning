@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 html {
   font-size: 10px;
   font-family: 'Ubuntu', sans-serif;
+  white-space: pre-line;
 }
 
 * {
@@ -41,4 +43,10 @@ a {
     color: #f8f8f8;
     background: #1e1e1e;
   }
+}
+
+.all-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
 }

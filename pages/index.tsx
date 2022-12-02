@@ -1,11 +1,13 @@
 import { Box } from '@mui/material';
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 import { Auth, ThemeSupa } from '@supabase/auth-ui-react';
-import SideBar from '../common/components/organisms/navigation/sidebar-navigation';
+import Sidebar from '../common/components/organisms/navigation/sidebar-navigation';
+import { ContentSection } from '../common/components/templates/content-section/content-section';
 
 const Home = () => {
   const session = useSession();
   const supabase = useSupabaseClient();
+  const sidebarWidth = 350;
 
   return (
     <div className="container">
@@ -16,8 +18,19 @@ const Home = () => {
           theme="dark"
         />
       ) : (
-        <Box sx={{ height: '100vh', width: '100%', overflow: 'hidden' }}>
-          <SideBar />
+        <Box
+          sx={{
+            height: '100vh',
+            width: '100%',
+            overflow: 'hidden',
+            display: 'flex',
+          }}
+        >
+          <Sidebar sidebarWidth={sidebarWidth} />
+          <ContentSection
+            suppressHydrationWarning
+            sidebarWidth={sidebarWidth}
+          />
         </Box>
       )}
     </div>
