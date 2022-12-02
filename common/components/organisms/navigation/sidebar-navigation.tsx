@@ -8,9 +8,14 @@ import { UserBar } from '../../molecules/user-bar/user-bar';
 type SidebarProps = {
   sidebarWidth: number;
   setCurrentNav: React.Dispatch<React.SetStateAction<string>>;
+  navCollapsed: boolean;
 };
 
-const Sidebar = ({ sidebarWidth, setCurrentNav }: SidebarProps) => {
+const Sidebar = ({
+  sidebarWidth,
+  setCurrentNav,
+  navCollapsed,
+}: SidebarProps) => {
   const { t } = useTranslation();
 
   return (
@@ -18,10 +23,10 @@ const Sidebar = ({ sidebarWidth, setCurrentNav }: SidebarProps) => {
       sx={{
         background: '#2C2C2C',
         height: '100vh',
-        width: `${sidebarWidth}px`,
+        minWidth: `${sidebarWidth}px`,
         color: '#f8f8f8',
         padding: '40px',
-        display: 'flex',
+        display: `${navCollapsed ? 'none' : 'flex'}`,
         flexDirection: 'column',
         alignItems: 'center',
         position: 'relative',
