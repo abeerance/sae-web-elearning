@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { useAtom } from 'jotai';
 import { RiArrowLeftRightLine } from 'react-icons/ri';
-import { collapsed } from '../../../../pages';
+import { collapsed } from '../../../../pages/_app';
 
 export const CollapseButton = () => {
   const [navCollapsed, setNavCollapsed] = useAtom(collapsed);
@@ -16,7 +16,7 @@ export const CollapseButton = () => {
         top: '25px',
         border: 'none',
         cursor: 'pointer',
-        left: `${navCollapsed ? '20px' : -50} `,
+        left: `${navCollapsed ? '20px' : 0} `,
         padding: `${navCollapsed ? '0.8rem' : '1.5rem 0.8rem'}`,
         borderRadius: `${navCollapsed ? '10px' : '0 10px 10px 0'}`,
       }}
