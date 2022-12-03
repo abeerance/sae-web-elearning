@@ -1,10 +1,8 @@
 import { createTheme, ThemeProvider } from '@mui/material';
 import type { AppProps } from 'next/app';
 import Navigation from '../common/components/layout-navigation/navigation';
-
 import '../common/i18n/config';
 import { Page } from '../common/types/page';
-
 import '../styles/globals.css';
 
 const webAppTheme = createTheme({
