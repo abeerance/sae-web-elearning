@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { H1Text } from '../../atoms/typography/h1-text';
-import { H2Text } from '../../atoms/typography/h2-text';
-import { Paragraph } from '../../atoms/typography/paragraph';
+import { H1Text } from '../../common/components/atoms/typography/h1-text';
+import { H2Text } from '../../common/components/atoms/typography/h2-text';
+import { Paragraph } from '../../common/components/atoms/typography/paragraph';
 
 const Basics = () => {
   const { t } = useTranslation();

@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { H1Text } from '../../atoms/typography/h1-text';
-import { Paragraph } from '../../atoms/typography/paragraph';
-import { SectionContent } from '../../molecules/sections/section-content';
+import { H1Text } from '../../common/components/atoms/typography/h1-text';
+import { Paragraph } from '../../common/components/atoms/typography/paragraph';
+import { SectionContent } from '../../common/components/molecules/sections/section-content';
 
 export const AppHome = () => {
   const { t } = useTranslation();

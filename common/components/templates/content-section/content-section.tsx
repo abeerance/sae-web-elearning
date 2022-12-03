@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { AppHome } from '../../organisms/content-pages/app-home';
-import Basics from '../../organisms/content-pages/basics';
-import { VariablesAndStatements } from '../../organisms/content-pages/variables-and-statements';
+import Basics from '../../../../pages/basics';
+import { VariablesAndStatements } from '../../../../pages/variables-and-statements';
+import { AppHome } from '../../../../pages/welcome';
 
 type ContentSectionProps = {
   suppressHydrationWarning: boolean;

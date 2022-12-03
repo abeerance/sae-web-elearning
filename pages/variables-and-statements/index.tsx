@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
-import { H1Text } from '../../atoms/typography/h1-text';
-import { H2Text } from '../../atoms/typography/h2-text';
-import { Paragraph } from '../../atoms/typography/paragraph';
+import { H1Text } from '../../common/components/atoms/typography/h1-text';
+import { H2Text } from '../../common/components/atoms/typography/h2-text';
+import { Paragraph } from '../../common/components/atoms/typography/paragraph';
 
 export const VariablesAndStatements = () => {
   return (
