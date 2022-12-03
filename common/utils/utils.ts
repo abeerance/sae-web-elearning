@@ -18,7 +18,7 @@ export class Globals {
 
   public static readonly navigationElements = [
     { topic: 'welcome', url: '/' },
-    { topic: 'basics', url: '/basics/' },
+    { topic: 'basics', url: '/basics' },
     { topic: 'variables', url: '/variables-and-statements' },
     { topic: 'codeQuality', url: '/code-quality' },
     { topic: 'types', url: '/types-and-data-types' },

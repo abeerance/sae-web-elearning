@@ -16,10 +16,7 @@ export const H2Text = ({ title, sectionNames }: H2TextProps) => {
         marginBottom: '35px',
       }}
     >
-      <Typography
-        variant="h2"
-        sx={{ fontStyle: 'italic', fontSize: '30px', fontWeight: 500 }}
-      >
+      <Typography variant="h2">
         {sectionNames ? t(`sections.${title}.name`) : title}
       </Typography>
       <Box

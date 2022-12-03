@@ -2,7 +2,8 @@ import { Box, Typography } from '@mui/material';
 import { useAtom } from 'jotai';
 import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { collapsed, sidebarWidth } from '../../../pages';
+import { collapsed, sidebarWidth } from '../../../pages/_app';
+
 import { SearchBar } from '../common/searchbar/searchbar';
 import { UserBar } from '../user/user-bar';
 import { NavigationWrapper } from './navigation-wrapper';

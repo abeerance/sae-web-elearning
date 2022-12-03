@@ -12,17 +12,7 @@ export const H1Text = ({ title, boxWidth }: H1TextProps) => {
         position: 'relative',
       }}
     >
-      <Typography
-        variant="h1"
-        sx={{
-          fontSize: '40px',
-          fontWeight: 700,
-          zIndex: 100,
-          fontStyle: 'italic',
-        }}
-      >
-        {title}
-      </Typography>
+      <Typography variant="h1">{title}</Typography>
       <Box
         sx={{
           height: '10px',
