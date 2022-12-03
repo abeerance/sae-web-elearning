@@ -24,6 +24,7 @@ export default function App({ Component, pageProps }: Props) {
 
   return (
     <ThemeProvider theme={webAppTheme}>
+      {/* @ts-ignore: isAsignable */}
       <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
     </ThemeProvider>
   );

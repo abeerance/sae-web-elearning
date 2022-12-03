@@ -4,7 +4,7 @@ import { H1Text } from '../../common/components/common/typography/h1-text';
 import { Paragraph } from '../../common/components/common/typography/paragraph';
 import { Section } from '../../common/components/content/section/section';
 
-export const AppHome = () => {
+export default function AppHome() {
   const { t } = useTranslation();
 
   return (
@@ -20,4 +20,4 @@ export const AppHome = () => {
       </Box>
     </Box>
   );
-};
+}

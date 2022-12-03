@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import { useAtom } from 'jotai';
 import { useEffect, useState } from 'react';
 import { collapsed, sidebarWidth } from '../../../pages';
-import { AppHome } from '../../../pages/welcome';
+import AppHome from '../../../pages/welcome';
 
 export const ContentSection = () => {
   const [width] = useAtom(sidebarWidth);
