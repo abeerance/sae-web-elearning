@@ -16,27 +16,10 @@ export const delimeterMap: Record<Delimeter, string> = {
 export class Globals {
   public static readonly noneValue = 'none';
 
-  // public static readonly navigationElements = [
-  //   'basics',
-  //   'variables',
-  //   'codeQuality',
-  //   'types',
-  //   'functions',
-  //   'trickyParts',
-  //   'dom',
-  //   'events',
-  //   'logic',
-  //   'loops',
-  //   'prototypes',
-  //   'advancedFlow',
-  //   'ajax',
-  //   'esModules',
-  //   'exercises',
-  // ];
-
   public static readonly navigationElements = [
+    { topic: 'welcome', url: '/' },
     { topic: 'basics', url: '/basics/' },
-    { topic: 'variables', url: '/variables' },
+    { topic: 'variables', url: '/variables-and-statements' },
     { topic: 'codeQuality', url: '/code-quality' },
     { topic: 'types', url: '/types-and-data-types' },
     { topic: 'functions', url: '/functions' },

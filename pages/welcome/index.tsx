@@ -1,10 +1,10 @@
 import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { H1Text } from '../../atoms/typography/h1-text';
-import { Paragraph } from '../../atoms/typography/paragraph';
-import { SectionContent } from '../../molecules/sections/section-content';
+import { H1Text } from '../../common/components/common/typography/h1-text';
+import { Paragraph } from '../../common/components/common/typography/paragraph';
+import { Section } from '../../common/components/content/section/section';
 
-export const AppHome = () => {
+export default function AppHome() {
   const { t } = useTranslation();
 
   return (
@@ -16,8 +16,8 @@ export const AppHome = () => {
         <Paragraph text={t('home.welcome3')} />
       </Box>
       <Box className="all-sections">
-        <SectionContent />
+        <Section />
       </Box>
     </Box>
   );
-};
+}

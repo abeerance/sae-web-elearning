@@ -1,9 +1,9 @@
 import { Box } from '@mui/material';
-import { H1Text } from '../../atoms/typography/h1-text';
-import { H2Text } from '../../atoms/typography/h2-text';
-import { Paragraph } from '../../atoms/typography/paragraph';
+import { H1Text } from '../../common/components/common/typography/h1-text';
+import { H2Text } from '../../common/components/common/typography/h2-text';
+import { Paragraph } from '../../common/components/common/typography/paragraph';
 
-export const VariablesAndStatements = () => {
+export default function VariablesAndStatements() {
   return (
     <Box
       sx={{
@@ -14,7 +14,6 @@ export const VariablesAndStatements = () => {
       }}
     >
       <Box sx={{ width: '50%' }}>
-        {' '}
         <H1Text title="Variables and Statements" boxWidth={100} />
         <Box sx={{ marginY: '5rem' }}>
           <Paragraph text="Variables are a building block of JavaScript, and you can't use JavaScript without knowing variables." />
@@ -94,4 +93,4 @@ export const VariablesAndStatements = () => {
       </Box>
     </Box>
   );
-};
+}

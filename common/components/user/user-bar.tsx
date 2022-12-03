@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 import { RiLogoutCircleRLine } from 'react-icons/ri';
-import placeholderProfile from '../../../assets/placeholder-profile.webp';
+import placeholderProfile from '../../assets/placeholder-profile.webp';
 
 export const UserBar = () => {
   return (
