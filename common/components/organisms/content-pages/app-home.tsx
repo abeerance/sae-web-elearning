@@ -8,7 +8,7 @@ export const AppHome = () => {
   const { t } = useTranslation();
 
   return (
-    <>
+    <Box>
       <H1Text title="JavaScript Notes and References" boxWidth={400} />
       <Box sx={{ marginY: '5rem' }}>
         <Paragraph text={t('home.welcome1')} />
@@ -18,6 +18,6 @@ export const AppHome = () => {
       <Box className="all-sections">
         <SectionContent />
       </Box>
-    </>
+    </Box>
   );
 };
