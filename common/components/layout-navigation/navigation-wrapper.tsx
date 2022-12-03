@@ -1,14 +1,10 @@
 import { Box } from '@mui/material';
-import { Globals } from '../../../utils/utils';
-import { MainNavigation } from '../../atoms/main-navigation';
+import { Globals } from '../../utils/utils';
+import { MainNavigation } from './main-navigation';
 
-type NavigationProos = {
-  setCurrentNav: React.Dispatch<React.SetStateAction<string>>;
-};
-
-export const Navigation = ({ setCurrentNav }: NavigationProos) => {
+export const NavigationWrapper = () => {
   const handleNavigationChange = (topic: string) => {
-    setCurrentNav(topic);
+    console.log(topic);
   };
 
   return (
@@ -30,7 +26,7 @@ export const Navigation = ({ setCurrentNav }: NavigationProos) => {
             handleNavigationChange(element.topic);
           }}
         >
-          <MainNavigation navigationElement={element.topic} />
+          <MainNavigation navigationElement={element.topic} url={element.url} />
         </Box>
       ))}
     </Box>

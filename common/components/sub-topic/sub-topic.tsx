@@ -1,17 +1,13 @@
 import { Box, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-type SectionSubTopic = {
+type SubTopicProps = {
   index: number;
   topic: string;
   subTopic: string;
 };
 
-export const SectionSubTopic = ({
-  index,
-  topic,
-  subTopic,
-}: SectionSubTopic) => {
+export const SubTopic = ({ index, topic, subTopic }: SubTopicProps) => {
   const { t } = useTranslation();
 
   return (

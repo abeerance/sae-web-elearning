@@ -1,19 +1,12 @@
 import { Box } from '@mui/material';
-import React from 'react';
+import { useAtom } from 'jotai';
 import { RiArrowLeftRightLine } from 'react-icons/ri';
+import { collapsed, sidebarWidth } from '../../../../pages';
 
-type CollapseButtonProps = {
-  sidebarWidth: number;
-  navCollapsed: boolean;
-  setNavCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-export const CollapseButton = ({
-  sidebarWidth,
-  navCollapsed,
-  setNavCollapsed,
-}: CollapseButtonProps) => {
-  const collapseButtonPosition = sidebarWidth - 25;
+export const CollapseButton = () => {
+  const [width] = useAtom(sidebarWidth);
+  const [navCollapsed, setNavCollapsed] = useAtom(collapsed);
+  const collapseButtonPosition = width - 25;
 
   return (
     <Box

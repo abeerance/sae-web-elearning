@@ -1,10 +1,10 @@
 import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { H1Text } from '../../common/components/atoms/typography/h1-text';
-import { H2Text } from '../../common/components/atoms/typography/h2-text';
-import { Paragraph } from '../../common/components/atoms/typography/paragraph';
+import { H1Text } from '../../common/components/common/typography/h1-text';
+import { H2Text } from '../../common/components/common/typography/h2-text';
+import { Paragraph } from '../../common/components/common/typography/paragraph';
 
-const Basics = () => {
+export default function Basics() {
   const { t } = useTranslation();
 
   return (
@@ -50,6 +50,4 @@ const Basics = () => {
       </Box>
     </Box>
   );
-};
-
-export default Basics;
+}
