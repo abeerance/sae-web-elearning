@@ -1,12 +1,10 @@
 import { Box } from '@mui/material';
 import { useAtom } from 'jotai';
 import { RiArrowLeftRightLine } from 'react-icons/ri';
-import { collapsed, sidebarWidth } from '../../../../pages';
+import { collapsed } from '../../../../pages';
 
 export const CollapseButton = () => {
-  const [width] = useAtom(sidebarWidth);
   const [navCollapsed, setNavCollapsed] = useAtom(collapsed);
-  const collapseButtonPosition = width - 25;
 
   return (
     <Box
@@ -14,12 +12,13 @@ export const CollapseButton = () => {
       sx={{
         position: 'absolute',
         zIndex: 999,
-        background: '#f8f8f8',
-        top: '35px',
+        background: `${navCollapsed ? '#f8f8f8' : '#2C2C2C'}`,
+        top: '25px',
+        border: 'none',
         cursor: 'pointer',
-        left: `${navCollapsed ? '30px' : `${collapseButtonPosition}px`} `,
-        padding: '0.8rem',
-        borderRadius: '10px',
+        left: `${navCollapsed ? '20px' : -50} `,
+        padding: `${navCollapsed ? '0.8rem' : '1.5rem 0.8rem'}`,
+        borderRadius: `${navCollapsed ? '10px' : '0 10px 10px 0'}`,
       }}
       onClick={() => {
         if (!navCollapsed) {
@@ -29,7 +28,10 @@ export const CollapseButton = () => {
         }
       }}
     >
-      <RiArrowLeftRightLine size={24} color="#000" />
+      <RiArrowLeftRightLine
+        size={30}
+        color={`${navCollapsed ? '#000' : '#fff'}`}
+      />
     </Box>
   );
 };
