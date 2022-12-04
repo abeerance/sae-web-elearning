@@ -1,5 +1,7 @@
 import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import basics1 from '../../common/assets/basics/basics-1.webp';
+import { ImageWrapper } from '../../common/components/common/images/image-wrapper';
 import { H1Text } from '../../common/components/common/typography/h1-text';
 import { H2Text } from '../../common/components/common/typography/h2-text';
 import { Paragraph } from '../../common/components/common/typography/paragraph';
@@ -21,6 +23,11 @@ export default function Basics() {
         <Paragraph text={t('basics.intro2')} />
         <Paragraph text={t('basics.intro3')} />
       </Box>
+      <ImageWrapper
+        height={`calc(20px + (400 - 20) * ((100vw - 300px) / (1600 - 300)))`}
+        source={basics1}
+        description="Example of a picture"
+      />
       <Box sx={{ marginBottom: '8rem' }}>
         <Paragraph text={t('basics.usecase1')} />
         <Paragraph text={t('basics.usecase2')} />
