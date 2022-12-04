@@ -33,7 +33,7 @@ export const H2Text = ({
           width: '100px',
           background: '#F58700',
           position: 'absolute',
-          bottom: 1,
+          bottom: 4,
           left: -10,
           zIndex: -10,
         }}

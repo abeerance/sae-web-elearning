@@ -3,13 +3,15 @@ import { Box, Typography } from '@mui/material';
 type H1TextProps = {
   title: string;
   boxWidth: number;
+  hasMarginBottom?: boolean;
 };
 
-export const H1Text = ({ title, boxWidth }: H1TextProps) => {
+export const H1Text = ({ title, boxWidth, hasMarginBottom }: H1TextProps) => {
   return (
     <Box
       sx={{
         position: 'relative',
+        marginBottom: `${hasMarginBottom && '3rem'}`,
       }}
     >
       <Typography variant="h1">{title}</Typography>
@@ -19,7 +21,7 @@ export const H1Text = ({ title, boxWidth }: H1TextProps) => {
           width: `${boxWidth}px`,
           background: '#F58700',
           position: 'absolute',
-          bottom: 2,
+          bottom: 5,
           left: -10,
           zIndex: -10,
         }}

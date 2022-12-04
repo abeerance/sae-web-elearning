@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import { t } from 'i18next';
 import { H1Text } from '../../common/components/common/typography/h1-text';
 import { H2Text } from '../../common/components/common/typography/h2-text';
 import { Paragraph } from '../../common/components/common/typography/paragraph';
@@ -7,20 +8,18 @@ export default function VariablesAndStatements() {
   return (
     <Box
       sx={{
-        width: '50%',
         display: 'flex',
         flexDirection: 'column',
+        maxWidth: '1024px',
       }}
     >
-      <H1Text title="Variables and Statements" boxWidth={100} />
-      <Box sx={{ marginY: '5rem' }}>
-        <Paragraph text="Variables are a building block of JavaScript, and you can't use JavaScript without knowing variables." />
-        <Paragraph text="We will cover what they are, what the different types of them are, what declaration means as well as what a statement is in JavaScript." />
-        <Paragraph text="There are three different ways to make a variable, which in JavaScript we refer to as declaring a variable. They are:" />
-        <Paragraph text="1. var" />
-        <Paragraph text="2. let" />
-        <Paragraph text="3. const" />
-      </Box>
+      <H1Text title="Variables and Statements" boxWidth={200} hasMarginBottom />
+      <Paragraph text={t('variablesAndStatements.intro1')} />
+      <Paragraph text="There are three different ways to make a variable, which in JavaScript we refer to as declaring a variable. They are:" />
+      <Paragraph text="1. var" />
+      <Paragraph text="2. let" />
+      <Paragraph text="3. const" />
+
       <Box>
         <H2Text title="var" />
         <Paragraph text="So, what is var?" />

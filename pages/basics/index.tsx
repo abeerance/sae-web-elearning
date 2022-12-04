@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import basics1 from '../../common/assets/basics/basics-1.webp';
 import nodeVersion from '../../common/assets/basics/nodev.webp';
 import packageManagers from '../../common/assets/basics/package-managers.webp';
+import runningJavaScript from '../../common/assets/basics/running-js.html.webp';
 import thinkingImage from '../../common/assets/basics/thinking.webp';
 import { DownloadButton } from '../../common/components/common/buttons/download-button';
 import { ImageWrapper } from '../../common/components/common/images/image-wrapper';
@@ -24,7 +25,7 @@ export default function Basics() {
         maxWidth: '1024px',
       }}
     >
-      <H1Text title="Welcome" boxWidth={100} />
+      <H1Text title="Welcome" boxWidth={100} hasMarginBottom />
       <Paragraph text={t('basics.intro1')} />
       <Paragraph text={t('basics.intro2')} />
       <Paragraph text={t('basics.intro3')} />
@@ -38,14 +39,11 @@ export default function Basics() {
         } `}
         hasMinHeight
       />
-      <Box sx={{ marginBottom: '8rem' }}>
-        <Paragraph text={t('basics.usecase1')} />
-        <Paragraph text={t('basics.usecase2')} />
-        <Paragraph text={t('basics.usecase3')} />
-        <Paragraph text={t('basics.usecase4')} />
-      </Box>
-      <H1Text title="Editor and Terminal Setup" boxWidth={100} />
-      <Paragraph text={t('basics.terminalIntro')} hasMargin />
+      <Paragraph text={t('basics.usecase1')} />
+      <Paragraph text={t('basics.usecase2')} />
+      <Paragraph text={t('basics.usecase3')} />
+      <Paragraph text={t('basics.usecase4')} />
+      <Paragraph text={t('basics.terminalIntro')} />
       <H2Text title="Your terminal of choice" marginTop="5rem" hasMarginTop />
       <ImageWrapper
         source={thinkingImage}
@@ -59,12 +57,11 @@ export default function Basics() {
         hasBottomDescription
       />
       <Paragraph text={t('basics.terminal1')} />
-      <Paragraph text={t('basics.terminal2')} />
       <DownloadButton
         title="Download iTerm"
         url="https://iterm2.com/downloads/stable/latest"
       />
-      <Paragraph text="On Windows, the terminal is called Command Prompt. You can access this by going to Start > All Programs > Accessories > Command Prompt. There is another terminal for Windows called Cmder." />
+      <Paragraph text={t('basics.terminal2')} />
       <H2Text title="Node.js" marginTop="5rem" hasMarginTop />
       <Paragraph text={t('basics.nodejs1')} />
       <DownloadButton
@@ -72,13 +69,13 @@ export default function Basics() {
         url="https://nodejs.org/en/download/"
         openTab
       />
-      <Paragraph text="We will primarily use Node.js for its tooling, bundling, formatting, etc. So for our sanity we will go ahead and install it" />
+      <Paragraph text={t('basics.nodejs2')} />
       <H2Text
         title="Check if Node.js is installed"
         marginTop="5rem"
         hasMarginTop
       />
-      <Paragraph text={t('basics.nodejs2')} />
+      <Paragraph text={t('basics.nodejs3')} />
       <ImageWrapper
         source={nodeVersion}
         description="Image of terminal how to check node Version"
@@ -86,7 +83,7 @@ export default function Basics() {
         width="560px"
         fixedWidth
       />
-      <H2Text title="NPM, PNPM or Yarn?" marginTop="5rem" hasMarginTop />
+      <H2Text title="NPM, PNPM or Yarn?" marginTop="4rem" hasMarginTop />
       <Paragraph text={t('basics.npm1')} />
       <ImageWrapper
         source={packageManagers}
@@ -95,6 +92,22 @@ export default function Basics() {
         width="630px"
         fixedWidth
       />
+      <H2Text
+        title="How do you run a JavaScript file?"
+        marginTop="4rem"
+        hasMarginTop
+      />
+      <Paragraph text={t('basics.runjs1')} />
+      <ImageWrapper
+        source={runningJavaScript}
+        description="Example of the different ways to run JavaScript in the HTML"
+        height="520px"
+        width="700px"
+        fixedWidth
+      />
+      <H2Text title="What is a console.log?" marginTop="4rem" hasMarginTop />
+      <Paragraph text={t('basics.console1')} />
+      <Paragraph text={t('basics.console2')} />
     </Box>
   );
 }
