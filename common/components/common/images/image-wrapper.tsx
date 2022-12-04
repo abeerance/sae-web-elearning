@@ -34,9 +34,9 @@ export const ImageWrapper = ({
       <Box
         sx={{
           width: `${fixedWidth ? width : 1}`,
-          maxWidth: '900px',
+          maxWidth: '800px',
           height: height,
-          maxHeight: '700px',
+          maxHeight: '600px',
           minHeight: `${hasMinHeight && '600px'}`,
           borderRadius: '10px',
           position: 'relative',
@@ -49,7 +49,9 @@ export const ImageWrapper = ({
           fill
           sizes="(max-width: 768px) 100vw,
     (max-width: 1200px) 50vw,
+    (max-width: 1920px) 80vw,
     33vw"
+          quality={100}
         />
       </Box>
       {hasBottomDescription ? (
@@ -60,6 +62,7 @@ export const ImageWrapper = ({
             fontSize: '18px',
             fontStyle: 'italic',
             color: '#a3adb9',
+            textAlign: 'center',
           }}
         >
           {description}

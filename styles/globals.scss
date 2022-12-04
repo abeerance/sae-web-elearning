@@ -67,6 +67,12 @@ p {
   font-family: 'Ubuntu Mono';
 }
 
+strong {
+  background: #324a5f;
+  border-radius: 3px;
+  padding: 5px 8px;
+}
+
 .all-sections {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
