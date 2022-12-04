@@ -59,6 +59,12 @@ h2 {
   font-weight: 500 !important;
 }
 
+p {
+  font-size: 22px;
+  line-height: 3rem;
+  font-family: "Ubuntu Mono";
+}
+
 .all-sections {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
