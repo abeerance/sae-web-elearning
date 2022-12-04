@@ -11,8 +11,8 @@ export default function AppHome() {
     <Box>
       <H1Text title="JavaScript Notes and References" boxWidth={400} />
       <Box sx={{ marginY: '5rem' }}>
-        <Paragraph text={t('home.welcome1')} />
-        <Paragraph text={t('home.welcome2')} />
+        <Paragraph text={t('home.welcome1')} hasMargin />
+        <Paragraph text={t('home.welcome2')} hasMargin />
         <Paragraph text={t('home.welcome3')} />
       </Box>
       <Box className="all-sections">

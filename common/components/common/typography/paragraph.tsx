@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import Tiptap from '../wysiwyg/tiptap';
 
 type ParagraphProps = {
   text: string;
@@ -7,15 +7,8 @@ type ParagraphProps = {
 
 export const Paragraph = ({ text, hasMargin }: ParagraphProps) => {
   return (
-    <Typography
-      sx={{
-        fontSize: '22px',
-        lineHeight: '3rem',
-        fontFamily: 'Ubuntu Mono',
-        marginY: `${hasMargin ? '1.5rem' : '0.8rem'}`,
-      }}
-    >
-      {text}
-    </Typography>
+    <div style={{ margin: `${hasMargin ? '3rem 0' : '2rem 0'}` }}>
+      <Tiptap content={text} />
+    </div>
   );
 };

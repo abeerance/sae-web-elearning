@@ -1,6 +1,6 @@
 {
   "navigation": {
-    "welcome": "JavaScript Overview",
+    "welcome": "Overview",
     "basics": "Basics",
     "variables": "Variables and Statements",
     "codeQuality": "Code Quality Tooling",
@@ -23,13 +23,13 @@
     "welcome3": "If you find anything missing or a spelling mistake, please let me know under hadrian.chio@gmail.com"
   },
   "basics": {
-    "intro1": "JavaScript is a lightweight programming language that web developers commonly use to create more dynamic interactions when developing web pages, applications, servers, and or even games.",
-    "intro2": "Developers generally use JavaScript alongside HTML and CSS The scripting language works well with CSS in formatting HTML elements. However, JavaScript still maintains user interaction, something that CSS cannot do by itself.",
-    "intro3": "JavaScript’s implementations within the web, mobile application, and game development make the scripting language worth learning.",
-    "usecase1": "It was a general-purpose scripting language to ensure web pages’ interoperability across different browsers and devices.",
-    "usecase2": "JavaScript has continued to grow alongside new browsers like Mozilla Firefox and Google Chrome since then. The latter even started developing the first modern JavaScript engine, called V8, which compiles bytecode into native machine code.",
-    "usecase3": "Today, JavaScript has plenty of frameworks and libraries to simplify complex projects, such as AngularJS, jQuery, and ReactJS.",
-    "usecase4": "Originally run on the client-side, the JavaScript implementation has branched out to the server-side after the Node.js development ‒ a cross-platform server environment built on the Google Chrome JavaScript V8 engine."
+    "intro1": "<p>JavaScript is a lightweight programming language that web developers commonly use to create more dynamic interactions when developing web pages, applications, servers, and or even games.</p>",
+    "intro2": "<p>Developers generally use JavaScript alongside HTML and CSS The scripting language works well with CSS in formatting HTML elements. However, JavaScript still maintains user interaction, something that CSS cannot do by itself.</p>",
+    "intro3": "<p>JavaScript’s implementations within the web, mobile application, and game development make the scripting language worth learning.</p>",
+    "usecase1": "<p>It was a general-purpose scripting language to ensure web pages’ interoperability across different browsers and devices.<p/>",
+    "usecase2": "<p>JavaScript has continued to grow alongside new browsers like Mozilla Firefox and Google Chrome since then. The latter even started developing the first modern JavaScript engine, called V8, which compiles bytecode into native machine code.</p>",
+    "usecase3": "<p>Today, JavaScript has plenty of frameworks and libraries to simplify complex projects, such as AngularJS, jQuery, and ReactJS.</p>",
+    "usecase4": "<p>Originally run on the client-side, the JavaScript implementation has branched out to the server-side after the Node.js development ‒ a cross-platform server environment built on the Google Chrome JavaScript V8 engine.</p>"
   },
   "sections": {
     "basics": {
