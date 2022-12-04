@@ -1,3 +1,5 @@
+import Tiptap from '../wysiwyg/tiptap';
+
 type ParagraphProps = {
   text: string;
   hasMargin?: boolean;
@@ -5,6 +7,8 @@ type ParagraphProps = {
 
 export const Paragraph = ({ text, hasMargin }: ParagraphProps) => {
   return (
-    <p style={{ margin: `${hasMargin ? '3rem 0' : '0.8rem 0'}` }}>{text}</p>
+    <div style={{ margin: `${hasMargin ? '3rem 0' : '2rem 0'}` }}>
+      <Tiptap content={text} />
+    </div>
   );
 };

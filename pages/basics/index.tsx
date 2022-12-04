@@ -16,7 +16,7 @@ export default function Basics() {
       }}
     >
       <H1Text title="Welcome" boxWidth={100} />
-      <Box sx={{ marginY: '5rem' }}>
+      <Box sx={{ margin: '5rem 0 3rem' }}>
         <Paragraph text={t('basics.intro1')} />
         <Paragraph text={t('basics.intro2')} />
         <Paragraph text={t('basics.intro3')} />
