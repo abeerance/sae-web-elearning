@@ -123,7 +123,7 @@ export default function Navigation(props: ReactNode) {
               textAlign: 'center',
             }}
           >
-            {t('navigation.welcome')}
+            {t('welcome')}
           </Typography>
           <SearchBar />
           <NavigationWrapper />

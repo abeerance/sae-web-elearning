@@ -1,4 +1,5 @@
 {
+  "welcome": "JavaScript Overview",
   "navigation": {
     "welcome": "Overview",
     "basics": "Basics",
@@ -58,6 +59,9 @@
     "statements2": "<p>A <strong>statement</strong> is an instruction for the computer, browser or JavaScript interpreter to do something. Anytime you're doing something with JavaScript, you are referring to a statement. After each statement, you will need to add a semi-colon to the end of the line or use a code-formatter which does it automatically for you.</p>",
     "codeBlocks1": "A <strong>code block</strong> is different from a statement. While statements only occupy one line, a code block can stretch through unlimited amounts of lines and live inside these curly brackets <strong>{ }</strong> 👇",
     "codeBlocks2": "Function definitions, if statements, loop are all code-blocks. In those instances you are running some code with several instructions for the computer inside of the block."
+  },
+  "functions": {
+    "intro1": "<p>Functions is another cornerstone of JavaScript. There are different kinds of functions, such as <strong>Built-In Functions</strong>, <strong>Custom Functions</strong>, <strong>Named Functions</strong>, <strong>Arrow Functions</strong>, and so on. </br>But first we will look into Built-In Functions:</p> "
   },
   "sections": {
     "basics": {

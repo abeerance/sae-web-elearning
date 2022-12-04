@@ -16,10 +16,17 @@ export const MainNavigation = ({
 
   return (
     <>
-      <Typography sx={{ fontSize: '18px', fontWeight: 500, marginY: '8px' }}>
+      <Typography
+        sx={{
+          fontSize: '18px',
+          fontWeight: 500,
+          marginY: '8px',
+          color: '#f8f8f8',
+        }}
+      >
         <Link href={url}>{t(`navigation.${navigationElement}`)}</Link>
       </Typography>
-      <RiArrowDownSLine size={25} />
+      <RiArrowDownSLine size={25} color="#f8f8f8" />
     </>
   );
 };

@@ -34,15 +34,11 @@ a {
   display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: #f8f8f8;
-    background: #1e1e1e;
-  }
+body {
+  color: #f8f8f8;
+  background: #1e1e1e;
 }
+
 h1,
 h2 {
   font-style: italic !important;
