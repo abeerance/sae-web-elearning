@@ -1,13 +1,16 @@
 import { Box } from '@mui/material';
+import { useAtom } from 'jotai';
 import { useTranslation } from 'react-i18next';
 import basics1 from '../../common/assets/basics/basics-1.webp';
 import { ImageWrapper } from '../../common/components/common/images/image-wrapper';
 import { H1Text } from '../../common/components/common/typography/h1-text';
 import { H2Text } from '../../common/components/common/typography/h2-text';
 import { Paragraph } from '../../common/components/common/typography/paragraph';
+import { collapsed } from '../_app';
 
 export default function Basics() {
   const { t } = useTranslation();
+  const [navCollapsed] = useAtom(collapsed);
 
   return (
     <Box
@@ -24,7 +27,11 @@ export default function Basics() {
         <Paragraph text={t('basics.intro3')} />
       </Box>
       <ImageWrapper
-        height={`calc(20px + (400 - 20) * ((100vw - 300px) / (1600 - 300)))`}
+        height={`${
+          navCollapsed
+            ? 'calc(100px + (500 - 100) * ((100vw - 300px) / (1600 - 300)))'
+            : 'calc(100px + (400 - 100) * ((100vw - 300px) / (1600 - 300)))'
+        } `}
         source={basics1}
         description="Example of a picture"
       />
