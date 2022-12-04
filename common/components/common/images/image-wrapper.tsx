@@ -62,6 +62,7 @@ export const ImageWrapper = ({
             fontSize: '18px',
             fontStyle: 'italic',
             color: '#a3adb9',
+            textAlign: 'center',
           }}
         >
           {description}
