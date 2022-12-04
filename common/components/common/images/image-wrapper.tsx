@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import Image, { StaticImageData } from 'next/image';
 
 type ImageWrapperProps = {
-  height: 'string';
+  height: string;
   source: StaticImageData;
   description: string;
 };
@@ -13,12 +13,20 @@ export const ImageWrapper = ({
   description,
 }: ImageWrapperProps) => {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+    <Box
+      sx={{
+        marginTop: 'rem',
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+        width: '100%',
+      }}
+    >
       <Box
         sx={{
-          width: 'auto',
+          width: 1,
           height: height,
-          borderRadius: '20px',
+          borderRadius: '10px',
           position: 'relative',
           overflow: 'hidden',
         }}
@@ -34,7 +42,7 @@ export const ImageWrapper = ({
       </Box>
       <Typography
         sx={{
-          marginY: '2rem',
+          margin: '3rem 0 5rem',
           fontFamily: `'Ubuntu', sans-serif`,
           fontSize: '18px',
           fontStyle: 'italic',
