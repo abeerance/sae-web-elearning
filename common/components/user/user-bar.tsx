@@ -26,12 +26,18 @@ export const UserBar = () => {
             width: '7rem',
             height: '7rem',
             borderRadius: '50px',
-            background: 'white',
             position: 'relative',
             overflow: 'hidden',
           }}
         >
-          <Image src={placeholderProfile} alt="placeholder profile" fill />
+          <Image
+            src={placeholderProfile}
+            alt="placeholder profile"
+            fill
+            sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+          />
         </Box>
         <Box
           sx={{
