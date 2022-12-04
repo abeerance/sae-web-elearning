@@ -2,6 +2,10 @@ import { Box } from '@mui/material';
 import { useAtom } from 'jotai';
 import { useTranslation } from 'react-i18next';
 import basics1 from '../../common/assets/basics/basics-1.webp';
+import nodeVersion from '../../common/assets/basics/nodev.webp';
+import packageManagers from '../../common/assets/basics/package-managers.webp';
+import thinkingImage from '../../common/assets/basics/thinking.webp';
+import { DownloadButton } from '../../common/components/common/buttons/download-button';
 import { ImageWrapper } from '../../common/components/common/images/image-wrapper';
 import { H1Text } from '../../common/components/common/typography/h1-text';
 import { H2Text } from '../../common/components/common/typography/h2-text';
@@ -15,25 +19,24 @@ export default function Basics() {
   return (
     <Box
       sx={{
-        width: '50%',
         display: 'flex',
         flexDirection: 'column',
+        maxWidth: '1024px',
       }}
     >
       <H1Text title="Welcome" boxWidth={100} />
-      <Box sx={{ margin: '5rem 0 3rem' }}>
-        <Paragraph text={t('basics.intro1')} />
-        <Paragraph text={t('basics.intro2')} />
-        <Paragraph text={t('basics.intro3')} />
-      </Box>
+      <Paragraph text={t('basics.intro1')} />
+      <Paragraph text={t('basics.intro2')} />
+      <Paragraph text={t('basics.intro3')} />
       <ImageWrapper
-        height={`${
-          navCollapsed
-            ? 'calc(100px + (500 - 100) * ((100vw - 300px) / (1600 - 300)))'
-            : 'calc(100px + (400 - 100) * ((100vw - 300px) / (1600 - 300)))'
-        } `}
         source={basics1}
         description="Example of a picture"
+        height={`${
+          navCollapsed
+            ? 'calc(100px + (600 - 100) * ((100vw - 300px) / (1600 - 300)))'
+            : 'calc(100px + (600 - 100) * ((100vw - 300px) / (1600 - 300)))'
+        } `}
+        hasMinHeight
       />
       <Box sx={{ marginBottom: '8rem' }}>
         <Paragraph text={t('basics.usecase1')} />
@@ -42,23 +45,56 @@ export default function Basics() {
         <Paragraph text={t('basics.usecase4')} />
       </Box>
       <H1Text title="Editor and Terminal Setup" boxWidth={100} />
-      <Paragraph text="In this section we will briefly go through your choices of terminal, if Node.js and npm are installed, some command line basics as well a quick intro to the recommended editor setup" />
-      <Box sx={{ margin: '5rem 0 2rem' }}>
-        <H2Text title="Your terminal of choice" />
-      </Box>
-      <Box>
-        <Paragraph text="You can use the built in terminal application which on a Mac you can find under Applications > Utilities > Terminal." />
-        <Paragraph text="I myself am a big fan of the terminal called iTerm, but in the end, they all have the same use case" />
-        <Paragraph text="On Windows, the terminal is called Command Prompt. You can access this by going to Start > All Programs > Accessories > Command Prompt. There is another terminal for Windows called Cmder." />
-      </Box>
-      <Box sx={{ margin: '5rem 0 2rem' }}>
-        <H2Text title="Node.js" />
-      </Box>
-      <Box>
-        <Paragraph text="Next up, we need Node.js. In order to install Node.js, go to https://nodejs.org and install the latest version." />
-        <Paragraph text="Install the LTS Version of Node.js, since this is the most stable version." />
-        <Paragraph text="We will primarily use Node.js for its tooling, bundling, formatting, etc. So for our sanity we will go ahead and install it" />
-      </Box>
+      <Paragraph text={t('basics.terminalIntro')} hasMargin />
+      <H2Text title="Your terminal of choice" marginTop="5rem" hasMarginTop />
+      <ImageWrapper
+        source={thinkingImage}
+        description="It's always hard to figure out which tools you are going to use"
+        height={`${
+          navCollapsed
+            ? 'calc(100px + (600 - 100) * ((100vw - 300px) / (1600 - 300)))'
+            : 'calc(100px + (600 - 100) * ((100vw - 300px) / (1600 - 300)))'
+        } `}
+        hasMinHeight
+        hasBottomDescription
+      />
+      <Paragraph text={t('basics.terminal1')} />
+      <Paragraph text={t('basics.terminal2')} />
+      <DownloadButton
+        title="Download iTerm"
+        url="https://iterm2.com/downloads/stable/latest"
+      />
+      <Paragraph text="On Windows, the terminal is called Command Prompt. You can access this by going to Start > All Programs > Accessories > Command Prompt. There is another terminal for Windows called Cmder." />
+      <H2Text title="Node.js" marginTop="5rem" hasMarginTop />
+      <Paragraph text={t('basics.nodejs1')} />
+      <DownloadButton
+        title="Download Node.js"
+        url="https://nodejs.org/en/download/"
+        openTab
+      />
+      <Paragraph text="We will primarily use Node.js for its tooling, bundling, formatting, etc. So for our sanity we will go ahead and install it" />
+      <H2Text
+        title="Check if Node.js is installed"
+        marginTop="5rem"
+        hasMarginTop
+      />
+      <Paragraph text={t('basics.nodejs2')} />
+      <ImageWrapper
+        source={nodeVersion}
+        description="Image of terminal how to check node Version"
+        height="270px"
+        width="560px"
+        fixedWidth
+      />
+      <H2Text title="NPM, PNPM or Yarn?" marginTop="5rem" hasMarginTop />
+      <Paragraph text={t('basics.npm1')} />
+      <ImageWrapper
+        source={packageManagers}
+        description="Explanation how to install the different package managers"
+        height="350px"
+        width="630px"
+        fixedWidth
+      />
     </Box>
   );
 }

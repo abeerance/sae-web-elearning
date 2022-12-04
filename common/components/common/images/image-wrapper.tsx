@@ -3,29 +3,41 @@ import Image, { StaticImageData } from 'next/image';
 
 type ImageWrapperProps = {
   height: string;
+  hasMinHeight?: boolean;
   source: StaticImageData;
   description: string;
+  hasBottomDescription?: boolean;
+  fixedWidth?: boolean;
+  width?: string;
 };
 
 export const ImageWrapper = ({
   height,
+  hasMinHeight,
   source,
+  fixedWidth,
+  width,
   description,
+  hasBottomDescription,
 }: ImageWrapperProps) => {
   return (
     <Box
       sx={{
-        marginTop: 'rem',
+        marginY: '5rem',
         display: 'flex',
         alignItems: 'center',
         flexDirection: 'column',
         width: '100%',
+        marginBottom: `${!hasBottomDescription && '5rem'}`,
       }}
     >
       <Box
         sx={{
-          width: 1,
+          width: `${fixedWidth ? width : 1}`,
+          maxWidth: '900px',
           height: height,
+          maxHeight: '700px',
+          minHeight: `${hasMinHeight && '600px'}`,
           borderRadius: '10px',
           position: 'relative',
           overflow: 'hidden',
@@ -40,17 +52,21 @@ export const ImageWrapper = ({
     33vw"
         />
       </Box>
-      <Typography
-        sx={{
-          margin: '3rem 0 5rem',
-          fontFamily: `'Ubuntu', sans-serif`,
-          fontSize: '18px',
-          fontStyle: 'italic',
-          color: '#a3adb9',
-        }}
-      >
-        {description}
-      </Typography>
+      {hasBottomDescription ? (
+        <Typography
+          sx={{
+            margin: '3rem 0 5rem',
+            fontFamily: `'Ubuntu', sans-serif`,
+            fontSize: '18px',
+            fontStyle: 'italic',
+            color: '#a3adb9',
+          }}
+        >
+          {description}
+        </Typography>
+      ) : (
+        <></>
+      )}
     </Box>
   );
 };
