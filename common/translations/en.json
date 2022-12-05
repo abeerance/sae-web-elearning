@@ -61,7 +61,11 @@
     "codeBlocks2": "Function definitions, if statements, loop are all code-blocks. In those instances you are running some code with several instructions for the computer inside of the block."
   },
   "functions": {
-    "intro1": "<p>Functions is another cornerstone of JavaScript. There are different kinds of functions, such as <strong>Built-In Functions</strong>, <strong>Custom Functions</strong>, <strong>Named Functions</strong>, <strong>Arrow Functions</strong>, and so on. </br>But first we will look into Built-In Functions:</p> "
+    "intro1": "<p>Functions is another cornerstone of JavaScript. There are different kinds of functions, such as <strong>Built-In Functions</strong>, <strong>Custom Functions</strong>, <strong>Named Functions</strong>, <strong>Arrow Functions</strong>, and so on.</p>",
+    "intro2": "<p>With the help of functions we can group together a set of statement. As a refresher: a statement is whenever a line ends with the <strong>semi-colon ;</strong>, which indicates that JavaScript has to do something. Functions can also receive data which are known as <strong>arguments</strong>. So whenever you pass a data to a function, you pass an argument to the function, which can further be worked with.</p>",
+    "intro3": "<p>Functions are very versatile as they can perform a set of work (one or multiple statements) and even can return a value. But first we will look at built-in functions:</p>",
+    "builtin1": "<p>JavaScript has a lot of functions that come out of the box. We already encountered one, which is the <strong>console.log()</strong>. The sole purpose of console.log() is to log something on the console and not return a value. That means you can log anything on the console: values, functions, objects, arrays, etc. Not all functions have to return a value as they can only also work off a certain set of commands.</p>",
+    "builtin2": "<p>Another really interesting built-in function is the <strong>Date.now()</strong>. What this function does is comething weird: It returns the number of milliseconds that have passed since January 1, 1970. It's a standard to convert those millisecond to a desired timesamp 👇</p>"
   },
   "sections": {
     "basics": {
