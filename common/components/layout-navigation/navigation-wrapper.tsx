@@ -3,10 +3,6 @@ import { Globals } from '../../utils/utils';
 import { MainNavigation } from './main-navigation';
 
 export const NavigationWrapper = () => {
-  const handleNavigationChange = (topic: string) => {
-    console.log(topic);
-  };
-
   return (
     <Box sx={{ width: '100%' }}>
       {Globals.navigationElements.map((element) => (
@@ -21,9 +17,6 @@ export const NavigationWrapper = () => {
             border: 'none',
             cursor: 'pointer',
             justifyContent: 'space-between',
-          }}
-          onClick={() => {
-            handleNavigationChange(element.topic);
           }}
         >
           <MainNavigation navigationElement={element.topic} url={element.url} />
