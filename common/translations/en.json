@@ -61,7 +61,7 @@
     "codeBlocks2": "Function definitions, if statements, loop are all code-blocks. In those instances you are running some code with several instructions for the computer inside of the block."
   },
   "functions": {
-    "intro1": "<p>Functions is another cornerstone of JavaScript. There are different kinds of functions, such as <strong>Built-In Functions</strong>, <strong>Custom Functions</strong>, <strong>Named Functions</strong>, <strong>Arrow Functions</strong>, and so on.</p>",
+    "intro1": "<p>In JavaScript, a function is a block of code that can be reused multiple times in a program. Functions allow you to divide your code into smaller, more manageable pieces, which can make your code easier to read, understand, and debug. Functions are created using the function keyword, followed by a name for the function and a set of parentheses that may contain one or more parameters.</p>",
     "intro2": "<p>With the help of functions we can group together a set of statement. As a refresher: a statement is whenever a line ends with the <strong>semi-colon ;</strong>, which indicates that JavaScript has to do something. Functions can also receive data which are known as <strong>arguments</strong>. So whenever you pass a data to a function, you pass an argument to the function, which can further be worked with.</p>",
     "intro3": "<p>Functions are very versatile as they can perform a set of work (one or multiple statements) and even can return a value.</p>",
     "builtin1": "In-built JavaScript functions are functions that are included with the JavaScript language by default. These functions are part of the JavaScript language and are available for use in your code without you having to define them yourself. Some examples of in-built JavaScript functions include <strong>Math.random()</strong>, which generates a random number, and <strong>console.log()</strong>, which outputs data to the console. </br>These functions are commonly used in JavaScript programs to perform a wide variety of tasks, such as generating random numbers, formatting text, and working with dates and times. The sole purpose of console.log() is to log something on the console and not return a value. That means you can log anything on the console: values, functions, objects, arrays, etc. Not all functions have to return a value as they can only also work off a certain set of commands.</p>",
@@ -116,10 +116,10 @@
     "functions": {
       "name": "Functions",
       "intro": "Introduction",
-      "builtin": "Built-In",
-      "custom": "Custom",
+      "built-in": "Built-In Functions",
+      "custom-functions": "Custom Functions",
       "parameters": "Parameters and Arguments",
-      "functionDeclaration": "Different ways to declare a function"
+      "different-ways-to-declare-functions": "Different ways to declare a Function"
     },
     "trickyParts": {
       "name": "Tricky Parts",
