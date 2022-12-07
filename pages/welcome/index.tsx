@@ -9,7 +9,7 @@ export default function AppHome() {
 
   return (
     <Box sx={{ maxWidth: '900px' }}>
-      <H1Text title="JavaScript Notes and References" boxWidth={400} />
+      <H1Text title="JavaScript Notes and References" />
       <Box sx={{ marginY: '5rem' }}>
         <Paragraph text={t('home.welcome1')} hasMargin />
         <Paragraph text={t('home.welcome2')} hasMargin />

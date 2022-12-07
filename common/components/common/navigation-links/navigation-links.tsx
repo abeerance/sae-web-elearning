@@ -23,7 +23,7 @@ export const NavigationLinks = ({ topic, subTopic }: NavigationLinksProps) => {
           height: '20px',
           width: '20px',
           position: 'absolute',
-          top: 10,
+          top: 8,
           left: -10,
         }}
       />

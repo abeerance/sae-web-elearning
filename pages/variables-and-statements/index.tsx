@@ -21,7 +21,7 @@ export default function VariablesAndStatements() {
         maxWidth: '1024px',
       }}
     >
-      <H1Text title="Variables and Statements" boxWidth={200} hasMarginBottom />
+      <H1Text title="Variables and Statements" hasMarginBottom />
       <Paragraph text={t('variablesAndStatements.intro1')} />
       <Paragraph text={t('variablesAndStatements.intro2')} />
       <H2Text title="var, let, const" marginTop="4rem" hasMarginTop />

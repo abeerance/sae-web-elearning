@@ -7,13 +7,13 @@ import scrollToExample1 from '../../../common/assets/functions/function4.webp';
 import scrollToExample2 from '../../../common/assets/functions/function5.webp';
 import scrollToExample3 from '../../../common/assets/functions/function6.gif';
 import { ImageWrapper } from '../../../common/components/common/images/image-wrapper';
-import { H2Text } from '../../../common/components/common/typography/h2-text';
+import { H1Text } from '../../../common/components/common/typography/h1-text';
 import { Paragraph } from '../../../common/components/common/typography/paragraph';
 
 export default function BuiltInFunctions() {
   return (
     <Box sx={{ display: 'inherit', flexDirection: 'column', width: '100%' }}>
-      <H2Text title="Built-In Functions" marginTop="4rem" hasMarginTop />
+      <H1Text title="Built-In Functions" hasMarginBottom />
       <Paragraph text={t('functions.builtin1')} />
       <ImageWrapper
         source={builtinExample1}

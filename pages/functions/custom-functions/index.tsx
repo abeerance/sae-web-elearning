@@ -5,13 +5,14 @@ import customFunctionExample2 from '../../../common/assets/functions/custom2.web
 import customFunctionExample3 from '../../../common/assets/functions/custom3.webp';
 import customFunctionExample4 from '../../../common/assets/functions/custom4.webp';
 import { ImageWrapper } from '../../../common/components/common/images/image-wrapper';
+import { H1Text } from '../../../common/components/common/typography/h1-text';
 import { H2Text } from '../../../common/components/common/typography/h2-text';
 import { Paragraph } from '../../../common/components/common/typography/paragraph';
 
 export default function CustomFunctions() {
   return (
     <Box sx={{ display: 'inherit', flexDirection: 'column', width: '100%' }}>
-      <H2Text title="Custom Functions" marginTop="3rem" hasMarginTop />
+      <H1Text title="Custom Functions" hasMarginBottom />
       <Paragraph text={t('functions.custom1')} />
       <ImageWrapper
         source={customFunctionExample1}

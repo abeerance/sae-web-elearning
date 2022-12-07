@@ -10,7 +10,7 @@ import { Paragraph } from '../../common/components/common/typography/paragraph';
 export default function Functions() {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: '1024px' }}>
-      <H1Text title="Functions and whatnot" boxWidth={150} hasMarginBottom />
+      <H1Text title="Functions and whatnot" hasMarginBottom />
       <Paragraph text={t('functions.intro1')} />
       <ImageWrapper
         source={introExample}
@@ -21,7 +21,8 @@ export default function Functions() {
       />
       <Paragraph text={t('functions.intro2')} />
       <Paragraph text={t('functions.intro3')} />
-      <H2Text title="Modules in this topic" marginTop="4rem" hasMarginTop />
+      <Paragraph text={t('functions.intro4')} />
+      <H2Text title="Function modules" marginTop="4rem" hasMarginTop />
       <NavigationLinks topic="functions" subTopic="built-in" />
       <NavigationLinks topic="functions" subTopic="custom-functions" />
       <NavigationLinks

@@ -25,7 +25,7 @@ export default function Basics() {
         maxWidth: '1024px',
       }}
     >
-      <H1Text title="Welcome" boxWidth={100} hasMarginBottom />
+      <H1Text title="Welcome" hasMarginBottom />
       <Paragraph text={t('basics.intro1')} />
       <Paragraph text={t('basics.intro2')} />
       <Paragraph text={t('basics.intro3')} />
