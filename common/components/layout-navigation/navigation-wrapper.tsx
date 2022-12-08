@@ -4,7 +4,7 @@ import { MainNavigation } from './main-navigation';
 
 export const NavigationWrapper = () => {
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%', maxHeight: '400px', overflowY: 'scroll' }}>
       {Globals.navigationElements.map((element) => (
         <Box
           component="button"

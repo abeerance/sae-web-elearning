@@ -18,9 +18,9 @@ export const MainNavigation = ({
     <>
       <Typography
         sx={{
-          fontSize: '18px',
+          fontSize: '16px',
           fontWeight: 500,
-          marginY: '8px',
+          marginY: '5px',
           color: '#f8f8f8',
         }}
       >
