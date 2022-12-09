@@ -77,3 +77,8 @@ strong {
 .ProseMirror:focus {
   outline: none;
 }
+
+.text-container ul > li {
+  margin-bottom: 15px;
+  list-style: none;
+}

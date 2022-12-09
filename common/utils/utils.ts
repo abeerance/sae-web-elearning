@@ -35,6 +35,17 @@ export class Globals {
     { topic: 'exercises', url: '/exercises' },
   ];
 
+  public static readonly functionsSubtopics = [
+    {
+      topic: 'functions',
+      subTopics: [
+        'built-in',
+        'custom-functions',
+        'different-ways-to-declare-functions',
+      ],
+    },
+  ];
+
   public static readonly subNavigation = [];
 
   public static readonly sectionContents = [
@@ -68,10 +79,10 @@ export class Globals {
       name: 'functions',
       subTopics: [
         'intro',
-        'builtin',
-        'custom',
-        'parameters',
-        'functionDeclaration',
+        'built-in',
+        'custom-functions',
+        'parameters-and-arguments',
+        'different-ways-to-declare-functions',
       ],
     },
     { name: 'trickyParts', subTopics: ['scope', 'hoisting', 'closures'] },

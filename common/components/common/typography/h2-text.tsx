@@ -29,11 +29,11 @@ export const H2Text = ({
       </Typography>
       <Box
         sx={{
-          height: '10px',
-          width: '100px',
+          height: '25px',
+          width: '25px',
           background: '#F58700',
           position: 'absolute',
-          bottom: 4,
+          top: 0,
           left: -10,
           zIndex: -10,
         }}

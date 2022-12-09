@@ -12,13 +12,13 @@ export const CollapseButton = () => {
       sx={{
         position: 'fixed',
         zIndex: 999,
-        background: `${navCollapsed ? '#f8f8f8' : '#2C2C2C'}`,
-        top: '25px',
+        background: '#f8f8f8',
+        top: '40px',
         border: 'none',
         cursor: 'pointer',
-        left: `${navCollapsed ? '20px' : '350px'} `,
-        padding: `${navCollapsed ? '0.8rem' : '2rem 1.5rem'}`,
-        borderRadius: `${navCollapsed ? '10px' : '0 10px 10px 0'}`,
+        left: `${navCollapsed ? '20px' : '270px'} `,
+        padding: '1rem',
+        borderRadius: '10px',
       }}
       onClick={() => {
         if (!navCollapsed) {
@@ -28,10 +28,7 @@ export const CollapseButton = () => {
         }
       }}
     >
-      <RiArrowLeftRightLine
-        size={30}
-        color={`${navCollapsed ? '#000' : '#fff'}`}
-      />
+      <RiArrowLeftRightLine size={30} color={'#232323'} />
     </Box>
   );
 };
