@@ -80,11 +80,5 @@ strong {
 
 .text-container ul > li {
   margin-bottom: 15px;
-  display: flex;
-  position: relative;
-}
-
-.text-container ul > li::marker {
-  content: url('../common/assets/svg/bullet-arrow.svg');
-  color: white;
+  list-style: none;
 }

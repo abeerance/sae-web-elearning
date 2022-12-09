@@ -25,6 +25,7 @@ export default function Functions() {
       <H2Text title="Function modules" marginTop="4rem" hasMarginTop />
       <NavigationLinks topic="functions" subTopic="built-in" />
       <NavigationLinks topic="functions" subTopic="custom-functions" />
+      <NavigationLinks topic="functions" subTopic="parameters-and-arguments" />
       <NavigationLinks
         topic="functions"
         subTopic="different-ways-to-declare-functions"

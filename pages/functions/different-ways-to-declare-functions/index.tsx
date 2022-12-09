@@ -8,6 +8,10 @@ import differentWaysExample2 from '../../../common/assets/functions/different2.w
 import differentWaysExample3 from '../../../common/assets/functions/different3.webp';
 import differentWaysExample4 from '../../../common/assets/functions/different4.webp';
 import differentWaysExample5 from '../../../common/assets/functions/different5.webp';
+import arrowFunctionExample1 from '../../../common/assets/functions/arrowFunction1.webp';
+import arrowFunctionExample2 from '../../../common/assets/functions/arrowFunction2.webp';
+import callbackFunctionExample1 from '../../../common/assets/functions/callback1.webp';
+import callbackFunctionExample2 from '../../../common/assets/functions/callback2.webp';
 import { ImageWrapper } from '../../../common/components/common/images/image-wrapper';
 
 export default function DifferentWaysToDeclareFunctions() {
@@ -68,6 +72,43 @@ export default function DifferentWaysToDeclareFunctions() {
         fixedWidth
       />
       <Paragraph text={t(`functions.differentWays10`)} />
+      <H2Text title="Arrow Functions" marginTop="4rem" hasMarginTop />
+      <Paragraph text={t(`functions.arrowFunctions1`)} />
+      <ImageWrapper
+        source={arrowFunctionExample1}
+        description="Example of Arrow Function syntax in relation to the usual way"
+        height="350px"
+        width="600px"
+        fixedWidth
+      />
+      <Paragraph text={t(`functions.arrowFunctions2`)} />
+      <ImageWrapper
+        source={arrowFunctionExample2}
+        description="A single expression on how to create an arrow function"
+        height="200px"
+        width="600px"
+        fixedWidth
+      />
+      <Paragraph text={t(`functions.arrowFunctions3`)} />
+      <H2Text title="Callback Functions" marginTop="4rem" hasMarginTop />
+      <Paragraph text={t(`functions.callbackFunctions1`)} />
+      <ImageWrapper
+        source={callbackFunctionExample1}
+        description="An example with a Callback Function handling a button click"
+        height="300px"
+        width="600px"
+        fixedWidth
+      />
+      <Paragraph text={t(`functions.callbackFunctions2`)} />
+      <Paragraph text={t(`functions.callbackFunctions3`)} />
+      <ImageWrapper
+        source={callbackFunctionExample2}
+        description="An example with the anonymous Callback Function setTimeOut()"
+        height="250px"
+        width="600px"
+        fixedWidth
+      />
+      <Paragraph text={t(`functions.callbackFunctions4`)} />
     </Box>
   );
 }

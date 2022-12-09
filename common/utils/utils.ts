@@ -81,7 +81,7 @@ export class Globals {
         'intro',
         'built-in',
         'custom-functions',
-        'parameters',
+        'parameters-and-arguments',
         'different-ways-to-declare-functions',
       ],
     },
