@@ -1,14 +1,14 @@
 import { Box } from '@mui/material';
 import { t } from 'i18next';
-import builtinExample1 from '../../../common/assets/functions/function1.webp';
-import dateNowExample from '../../../common/assets/functions/function2.webp';
-import consoleClearExample from '../../../common/assets/functions/function3.webp';
-import scrollToExample1 from '../../../common/assets/functions/function4.webp';
-import scrollToExample2 from '../../../common/assets/functions/function5.webp';
-import scrollToExample3 from '../../../common/assets/functions/function6.gif';
-import { ImageWrapper } from '../../../common/components/common/images/image-wrapper';
-import { H1Text } from '../../../common/components/common/typography/h1-text';
-import { Paragraph } from '../../../common/components/common/typography/paragraph';
+import { ImageWrapper } from '../../../../common/components/common/images/image-wrapper';
+import { H1Text } from '../../../../common/components/common/typography/h1-text';
+import { Paragraph } from '../../../../common/components/common/typography/paragraph';
+import builtinExample1 from '../../../common/javascript-assets/functions/function1.webp';
+import dateNowExample from '../../../common/javascript-assets/functions/function2.webp';
+import consoleClearExample from '../../../common/javascript-assets/functions/function3.webp';
+import scrollToExample1 from '../../../common/javascript-assets/functions/function4.webp';
+import scrollToExample2 from '../../../common/javascript-assets/functions/function5.webp';
+import scrollToExample3 from '../../../common/javascript-assets/functions/function6.gif';
 
 export default function BuiltInFunctions() {
   return (

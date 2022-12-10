@@ -32,7 +32,6 @@ export const NavigationLinks = ({ topic, subTopic }: NavigationLinksProps) => {
           fontSize: '35px',
           zIndex: 200,
           fontWeight: 700,
-          fontFamily: 'Ubuntu Mono',
         }}
       >
         <Link href={`/${topic}/${subTopic}`}>

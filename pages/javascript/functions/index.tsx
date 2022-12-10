@@ -1,11 +1,11 @@
 import { Box } from '@mui/material';
 import { t } from 'i18next';
-import introExample from '../../common/assets/functions/intro1.webp';
-import { ImageWrapper } from '../../common/components/common/images/image-wrapper';
-import { NavigationLinks } from '../../common/components/common/navigation-links/navigation-links';
-import { H1Text } from '../../common/components/common/typography/h1-text';
-import { H2Text } from '../../common/components/common/typography/h2-text';
-import { Paragraph } from '../../common/components/common/typography/paragraph';
+import { ImageWrapper } from '../../../common/components/common/images/image-wrapper';
+import { NavigationLinks } from '../../../common/components/common/navigation-links/navigation-links';
+import { H1Text } from '../../../common/components/common/typography/h1-text';
+import { H2Text } from '../../../common/components/common/typography/h2-text';
+import { Paragraph } from '../../../common/components/common/typography/paragraph';
+import introExample from '../../common/javascript-assets/functions/intro1.webp';
 
 export default function Functions() {
   return (

@@ -14,7 +14,6 @@ export const SubTopic = ({ index, topic, subTopic }: SubTopicProps) => {
     <Box sx={{ display: 'flex', marginBottom: '12px' }}>
       <Typography
         sx={{
-          fontFamily: 'Ubuntu Mono',
           fontSize: '20px',
           marginRight: '10px',
         }}
@@ -23,14 +22,13 @@ export const SubTopic = ({ index, topic, subTopic }: SubTopicProps) => {
       </Typography>
       <Typography
         sx={{
-          fontFamily: 'Ubuntu Mono',
           fontSize: '20px',
           marginRight: '10px',
         }}
       >
         -
       </Typography>
-      <Typography sx={{ fontFamily: 'Ubuntu Mono', fontSize: '20px' }}>
+      <Typography sx={{ fontSize: '20px' }}>
         {t(`sections.${topic}.${subTopic}`)}
       </Typography>
     </Box>

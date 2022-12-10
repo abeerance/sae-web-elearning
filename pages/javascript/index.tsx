@@ -8,7 +8,7 @@ export default function AppHome() {
   const { t } = useTranslation();
 
   return (
-    <Box sx={{ maxWidth: '900px' }}>
+    <Box sx={{ width: '100%' }}>
       <H1Text title="JavaScript Notes and References" />
       <Box sx={{ marginY: '5rem' }}>
         <Paragraph text={t('home.welcome1')} hasMargin />

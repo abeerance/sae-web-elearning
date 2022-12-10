@@ -1,4 +1,4 @@
-import Tiptap from '../../common/components/common/wysiwyg/tiptap';
+import Tiptap from '../../../common/components/common/wysiwyg/tiptap';
 
 export default function CodeQuality() {
   return (
