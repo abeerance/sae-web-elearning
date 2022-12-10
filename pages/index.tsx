@@ -1,4 +1,4 @@
-import AppHome from './welcome';
+import AppHome from './javascript';
 
 const Home = () => {
   return (

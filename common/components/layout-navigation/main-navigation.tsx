@@ -21,12 +21,12 @@ export const MainNavigation = ({
           fontSize: '16px',
           fontWeight: 500,
           marginY: '5px',
-          color: '#f8f8f8',
+          color: '#242424',
         }}
       >
         <Link href={url}>{t(`navigation.${navigationElement}`)}</Link>
       </Typography>
-      <RiArrowDownSLine size={25} color="#f8f8f8" />
+      <RiArrowDownSLine size={25} color="#242424" />
     </>
   );
 };

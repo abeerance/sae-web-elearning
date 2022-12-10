@@ -58,9 +58,7 @@ export const ImageWrapper = ({
         <Typography
           sx={{
             margin: '3rem 0 5rem',
-            fontFamily: `'Ubuntu', sans-serif`,
             fontSize: '18px',
-            fontStyle: 'italic',
             color: '#a3adb9',
             textAlign: 'center',
           }}

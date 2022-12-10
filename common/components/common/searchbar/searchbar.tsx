@@ -1,39 +1,21 @@
-import { InputAdornment, TextField } from '@mui/material';
-import { useState } from 'react';
-import { RiSearchLine } from 'react-icons/ri';
+import { Box, Typography } from '@mui/material';
 
-interface State {
-  keyword: string;
-}
-
-export const SearchBar = () => {
-  const [values, setValues] = useState<State>({
-    keyword: '',
-  });
-  const handleChange = () => {
-    // TODO: Implement handleChange
-  };
-
+export default function Searchbar() {
   return (
-    <TextField
-      id="outlined-start-adornment"
-      placeholder="Search"
-      onChange={handleChange}
+    <Box
       sx={{
+        height: '5rem',
         width: '100%',
-        background: '#f8f8f8',
-        borderRadius: '5px',
-        color: '#000',
-        marginY: '30px',
+        background: '#fff',
+        borderRadius: '15px',
+        border: '1px solid #232323',
+        boxShadow: '3px 3px 0 2px #232323',
+        padding: '1rem',
+        display: 'flex',
+        alignItems: 'center',
       }}
-      InputProps={{
-        sx: { fontSize: '16px' },
-        startAdornment: (
-          <InputAdornment position="start">
-            <RiSearchLine size={20} />
-          </InputAdornment>
-        ),
-      }}
-    />
+    >
+      <Typography sx={{ fontSize: '2rem' }}>Search</Typography>
+    </Box>
   );
-};
+}

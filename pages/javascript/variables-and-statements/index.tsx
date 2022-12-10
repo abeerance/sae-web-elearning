@@ -1,16 +1,16 @@
 import { Box } from '@mui/material';
 import { t } from 'i18next';
-import codeBlocksExample from '../../common/assets/variables-and-statements/code-blocks.webp';
-import statementExample from '../../common/assets/variables-and-statements/statement.webp';
-import varExample2 from '../../common/assets/variables-and-statements/var-let-const-2.webp';
-import letExample from '../../common/assets/variables-and-statements/var-let-const-3.webp';
-import constExample from '../../common/assets/variables-and-statements/var-let-const-4.webp';
-import varLetConstExample from '../../common/assets/variables-and-statements/var-let-const-5.webp';
-import varExample from '../../common/assets/variables-and-statements/var-let-const.js.webp';
-import { ImageWrapper } from '../../common/components/common/images/image-wrapper';
-import { H1Text } from '../../common/components/common/typography/h1-text';
-import { H2Text } from '../../common/components/common/typography/h2-text';
-import { Paragraph } from '../../common/components/common/typography/paragraph';
+import codeBlocksExample from '../../../common/assets/javascript-assets/variables-and-statements/code-blocks.webp';
+import statementExample from '../../../common/assets/javascript-assets/variables-and-statements/statement.webp';
+import varExample2 from '../../../common/assets/javascript-assets/variables-and-statements/var-let-const-2.webp';
+import letExample from '../../../common/assets/javascript-assets/variables-and-statements/var-let-const-3.webp';
+import constExample from '../../../common/assets/javascript-assets/variables-and-statements/var-let-const-4.webp';
+import varLetConstExample from '../../../common/assets/javascript-assets/variables-and-statements/var-let-const-5.webp';
+import varExample from '../../../common/assets/javascript-assets/variables-and-statements/var-let-const.js.webp';
+import { ImageWrapper } from '../../../common/components/common/images/image-wrapper';
+import { H1Text } from '../../../common/components/common/typography/h1-text';
+import { H2Text } from '../../../common/components/common/typography/h2-text';
+import { Paragraph } from '../../../common/components/common/typography/paragraph';
 
 export default function VariablesAndStatements() {
   return (

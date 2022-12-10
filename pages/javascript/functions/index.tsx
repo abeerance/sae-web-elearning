@@ -1,15 +1,15 @@
 import { Box } from '@mui/material';
 import { t } from 'i18next';
-import introExample from '../../common/assets/functions/intro1.webp';
-import { ImageWrapper } from '../../common/components/common/images/image-wrapper';
-import { NavigationLinks } from '../../common/components/common/navigation-links/navigation-links';
-import { H1Text } from '../../common/components/common/typography/h1-text';
-import { H2Text } from '../../common/components/common/typography/h2-text';
-import { Paragraph } from '../../common/components/common/typography/paragraph';
+import introExample from '../../../common/assets/javascript-assets/functions/intro1.webp';
+import { ImageWrapper } from '../../../common/components/common/images/image-wrapper';
+import { NavigationLinks } from '../../../common/components/common/navigation-links/navigation-links';
+import { H1Text } from '../../../common/components/common/typography/h1-text';
+import { H2Text } from '../../../common/components/common/typography/h2-text';
+import { Paragraph } from '../../../common/components/common/typography/paragraph';
 
 export default function Functions() {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: '1024px' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: '100%' }}>
       <H1Text title="Functions and whatnot" hasMarginBottom />
       <Paragraph text={t('functions.intro1')} />
       <ImageWrapper

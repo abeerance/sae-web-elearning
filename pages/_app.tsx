@@ -2,16 +2,14 @@ import { Box, createTheme, ThemeProvider } from '@mui/material';
 import { atom, useAtom } from 'jotai';
 import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
-
-import { CollapseButton } from '../common/components/common/buttons/collapse-button';
-import Navigation from '../common/components/layout-navigation/navigation';
+import WebbAppLayout from '../common/components/layout-navigation/webapp-layout';
 import '../common/i18n/config';
 import { Page } from '../common/types/page';
 import '../styles/globals.css';
 
 const webAppTheme = createTheme({
   typography: {
-    fontFamily: ['Ubuntu', 'sans-serif'].join(','),
+    fontFamily: ['Outfit', 'sans-serif'].join(','),
     fontSize: 16,
   },
 });
@@ -25,7 +23,7 @@ export const collapsed = atom(false);
 
 export default function App({ Component, pageProps }: Props) {
   const getLayout = Component.getLayout ?? ((page) => page);
-  const Layout = Component.layout ?? Navigation;
+  const Layout = Component.layout ?? WebbAppLayout;
   const [width] = useAtom(sidebarWidth);
   const [contentWidth, setContentWidth] = useState<number>();
   const [navCollapsed] = useAtom(collapsed);
@@ -47,8 +45,7 @@ export default function App({ Component, pageProps }: Props) {
           <Box
             sx={{
               height: '100vh',
-              width: `${navCollapsed ? '100vw' : `${contentWidth}px`}`,
-              padding: '5rem 7rem',
+              width: '100%',
               overflowY: 'scroll',
               display: 'flex',
               flexDirection: 'column',
@@ -56,7 +53,6 @@ export default function App({ Component, pageProps }: Props) {
               position: 'relative',
             }}
           >
-            <CollapseButton />
             <Component {...pageProps} />
           </Box>,
         )}
