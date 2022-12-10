@@ -1,6 +1,10 @@
 import { Box, Typography } from '@mui/material';
+import { CurrentCourseButtonProps } from '../../types/types';
 
-export const ReactButton = () => {
+export const ReactButton = ({
+  currentCourse,
+  setCurrentCourse,
+}: CurrentCourseButtonProps) => {
   return (
     <Box
       component="button"
@@ -11,6 +15,11 @@ export const ReactButton = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+      }}
+      onClick={() => {
+        if (currentCourse !== 'react' && setCurrentCourse) {
+          setCurrentCourse('react');
+        }
       }}
     >
       <svg

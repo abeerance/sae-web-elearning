@@ -1,9 +1,9 @@
-import AppHome from './javascript';
+import WebappHome from './home';
 
 const Home = () => {
   return (
     <>
-      <AppHome />
+      <WebappHome />
     </>
   );
 };

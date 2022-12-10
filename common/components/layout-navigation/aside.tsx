@@ -1,9 +1,13 @@
 import { Box, Typography } from '@mui/material';
+import { CurrentCourseButtonProps } from '../../types/types';
 import Searchbar from '../common/searchbar/searchbar';
 import { UserBar } from '../user/user-bar';
 import { NavigationWrapper } from './navigation-wrapper';
 
-export default function Aside() {
+export default function Aside({
+  currentCourse,
+  setCurrentCourse,
+}: CurrentCourseButtonProps) {
   return (
     <Box
       sx={{
@@ -30,7 +34,7 @@ export default function Aside() {
       >
         JavaScript Topics
       </Typography>
-      <NavigationWrapper />
+      <NavigationWrapper currentCourse={currentCourse} />
     </Box>
   );
 }

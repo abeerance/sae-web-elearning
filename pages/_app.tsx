@@ -1,3 +1,4 @@
+import { Directus } from '@directus/sdk';
 import { Box, createTheme, ThemeProvider } from '@mui/material';
 import { atom, useAtom } from 'jotai';
 import type { AppProps } from 'next/app';
@@ -20,6 +21,7 @@ type Props = AppProps & {
 
 export const sidebarWidth = atom(350);
 export const collapsed = atom(false);
+const directusClient = new Directus('https://sae-web-elearning.directus.app');
 
 export default function App({ Component, pageProps }: Props) {
   const getLayout = Component.getLayout ?? ((page) => page);

@@ -1,9 +1,18 @@
 import { Box } from '@mui/material';
+import { atom, useAtom } from 'jotai';
+import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 import Aside from './aside';
 import SideBar from './sidebar';
 
+const course = atom('home');
+
 export default function WebbAppLayout(props: ReactNode) {
+  const [currentCourse, setCurrentCourse] = useAtom(course);
+
+  const router = useRouter();
+  console.log(router.pathname);
+
   return (
     <main>
       <Box
@@ -13,10 +22,13 @@ export default function WebbAppLayout(props: ReactNode) {
           height: '100vh',
           overflow: 'hidden',
           position: 'relative',
-          background: '#24331E',
+          background: '#232227',
         }}
       >
-        <SideBar />
+        <SideBar
+          currentCourse={currentCourse}
+          setCurrentCourse={setCurrentCourse}
+        />
         <Box
           sx={{
             display: 'flex',
@@ -48,7 +60,7 @@ export default function WebbAppLayout(props: ReactNode) {
               <Box>{props.children}</Box>
             </Box>
           </Box>
-          <Aside />
+          <Aside currentCourse={currentCourse} />
         </Box>
       </Box>
     </main>

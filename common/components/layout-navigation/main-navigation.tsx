@@ -1,17 +1,12 @@
 import { Typography } from '@mui/material';
-import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { RiArrowDownSLine } from 'react-icons/ri';
 
 type MainNavigationProps = {
   navigationElement: string;
-  url: string;
 };
 
-export const MainNavigation = ({
-  navigationElement,
-  url,
-}: MainNavigationProps) => {
+export const MainNavigation = ({ navigationElement }: MainNavigationProps) => {
   const { t } = useTranslation();
 
   return (
@@ -24,7 +19,7 @@ export const MainNavigation = ({
           color: '#242424',
         }}
       >
-        <Link href={url}>{t(`navigation.${navigationElement}`)}</Link>
+        {t(`navigation.${navigationElement}`)}
       </Typography>
       <RiArrowDownSLine size={25} color="#242424" />
     </>

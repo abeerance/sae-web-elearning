@@ -1,6 +1,13 @@
 import { Box, Typography } from '@mui/material';
+import { useRouter } from 'next/router';
+import { CurrentCourseButtonProps } from '../../types/types';
 
-export const JavaScriptButton = () => {
+export const JavaScriptButton = ({
+  currentCourse,
+  setCurrentCourse,
+}: CurrentCourseButtonProps) => {
+  const router = useRouter();
+
   return (
     <Box
       component="button"
@@ -11,6 +18,12 @@ export const JavaScriptButton = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+      }}
+      onClick={() => {
+        if (currentCourse !== 'javascript' && setCurrentCourse) {
+          setCurrentCourse('javascript');
+          router.push('/javascript');
+        }
       }}
     >
       <svg

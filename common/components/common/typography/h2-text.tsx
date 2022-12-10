@@ -24,7 +24,7 @@ export const H2Text = ({
         marginTop: `${hasMarginTop ? marginTop : 0}`,
       }}
     >
-      <Typography variant="h2">
+      <Typography variant="h2" sx={{ position: 'relative', zIndex: 50 }}>
         {sectionNames ? t(`sections.${title}.name`) : title}
       </Typography>
       <Box
@@ -34,8 +34,8 @@ export const H2Text = ({
           background: '#F58700',
           position: 'absolute',
           top: 0,
-          left: -10,
-          zIndex: -10,
+          left: 0,
+          zIndex: 10,
         }}
       />
     </Box>

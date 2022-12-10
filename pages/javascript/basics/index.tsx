@@ -22,7 +22,7 @@ export default function Basics() {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        maxWidth: '1024px',
+        maxWidth: '100%',
       }}
     >
       <H1Text title="Welcome" hasMarginBottom />
