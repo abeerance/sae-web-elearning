@@ -36,7 +36,7 @@ export default function WebbAppLayout(props: ReactNode) {
               sx={{
                 width: '100%',
                 height: '100%',
-                padding: '2rem',
+                padding: '2rem 4rem',
                 background: '#fff',
                 borderRadius: '15px',
                 overflowY: 'scroll',

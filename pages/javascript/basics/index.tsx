@@ -1,16 +1,16 @@
 import { Box } from '@mui/material';
 import { useAtom } from 'jotai';
 import { useTranslation } from 'react-i18next';
+import basics1 from '../../../common/assets/javascript-assets/basics/basics-1.webp';
+import nodeVersion from '../../../common/assets/javascript-assets/basics/nodev.webp';
+import packageManagers from '../../../common/assets/javascript-assets/basics/package-managers.webp';
+import runningJavaScript from '../../../common/assets/javascript-assets/basics/running-js.html.webp';
+import thinkingImage from '../../../common/assets/javascript-assets/basics/thinking.webp';
 import { DownloadButton } from '../../../common/components/common/buttons/download-button';
 import { ImageWrapper } from '../../../common/components/common/images/image-wrapper';
 import { H1Text } from '../../../common/components/common/typography/h1-text';
 import { H2Text } from '../../../common/components/common/typography/h2-text';
 import { Paragraph } from '../../../common/components/common/typography/paragraph';
-import basics1 from '../../common/javascript-assets/basics/basics-1.webp';
-import nodeVersion from '../../common/javascript-assets/basics/nodev.webp';
-import packageManagers from '../../common/javascript-assets/basics/package-managers.webp';
-import runningJavaScript from '../../common/javascript-assets/basics/running-js.html.webp';
-import thinkingImage from '../../common/javascript-assets/basics/thinking.webp';
 import { collapsed } from '../../_app';
 
 export default function Basics() {

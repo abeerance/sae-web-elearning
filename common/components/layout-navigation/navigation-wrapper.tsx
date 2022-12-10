@@ -28,7 +28,10 @@ export const NavigationWrapper = () => {
             justifyContent: 'space-between',
           }}
         >
-          <MainNavigation navigationElement={element.topic} url={element.url} />
+          <MainNavigation
+            navigationElement={element.topic}
+            url={`javascript/${element.url}`}
+          />
         </Box>
       ))}
     </Box>

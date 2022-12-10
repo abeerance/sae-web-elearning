@@ -58,9 +58,10 @@ p {
 }
 
 strong {
-  background: #324a5f;
+  background: #24331e;
   border-radius: 3px;
   padding: 5px 8px;
+  color: #fff;
 }
 
 .all-sections {

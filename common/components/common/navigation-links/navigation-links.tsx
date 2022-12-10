@@ -34,7 +34,7 @@ export const NavigationLinks = ({ topic, subTopic }: NavigationLinksProps) => {
           fontWeight: 700,
         }}
       >
-        <Link href={`/${topic}/${subTopic}`}>
+        <Link href={`${topic}/${subTopic}`}>
           {t(`sections.${topic}.${subTopic}`)}
         </Link>
       </Typography>
