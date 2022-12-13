@@ -9,11 +9,13 @@ export const ReactButton = ({
     <Box
       component="button"
       sx={{
+        height: '70px',
         margin: '10px',
         border: 'none',
         background: 'none',
         display: 'flex',
         flexDirection: 'column',
+        justifyContent: 'space-between',
         alignItems: 'center',
       }}
       onClick={() => {

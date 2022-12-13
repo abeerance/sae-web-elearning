@@ -13,10 +13,10 @@ export const CollapseButton = () => {
         position: 'fixed',
         zIndex: 999,
         background: '#f8f8f8',
-        top: '40px',
+        bottom: '20px',
         border: 'none',
         cursor: 'pointer',
-        left: `${navCollapsed ? '20px' : '270px'} `,
+        left: `${navCollapsed ? '20px' : '200px'} `,
         padding: '1rem',
         borderRadius: '10px',
       }}

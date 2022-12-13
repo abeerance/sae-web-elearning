@@ -16,12 +16,13 @@ export const MainNavigation = ({ navigationElement }: MainNavigationProps) => {
           fontSize: '16px',
           fontWeight: 500,
           marginY: '5px',
-          color: '#242424',
+          color: '#f8f8f8',
+          textAlign: 'left',
         }}
       >
         {t(`navigation.${navigationElement}`)}
       </Typography>
-      <RiArrowDownSLine size={25} color="#242424" />
+      <RiArrowDownSLine size={25} color="#f8f8f8" />
     </>
   );
 };

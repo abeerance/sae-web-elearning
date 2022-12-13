@@ -1,5 +1,7 @@
 import { Box } from '@mui/material';
+import { useAtom } from 'jotai';
 import { useRouter } from 'next/router';
+import { collapsed } from '../../../pages/_app';
 import { CurrentCourseButtonProps } from '../../types/types';
 import { Globals } from '../../utils/utils';
 import { MainNavigation } from './main-navigation';
@@ -7,11 +9,15 @@ import { MainNavigation } from './main-navigation';
 export const NavigationWrapper = ({
   currentCourse,
 }: CurrentCourseButtonProps) => {
+  const [navCollapsed] = useAtom(collapsed);
   const router = useRouter();
 
-  const handleOnClick = (url: string) => {
+  const handleOnClick = (module: string) => {
     if (currentCourse === 'javascript') {
-      router.replace({ pathname: `javascript${url}` });
+      router.push({
+        pathname: 'javascript/module/[name]',
+        query: { name: module },
+      });
     }
   };
 
@@ -19,7 +25,7 @@ export const NavigationWrapper = ({
     <Box
       sx={{
         width: '100%',
-        display: 'flex',
+        display: `${navCollapsed ? 'none' : 'flex'}`,
         flexDirection: 'column',
         overflowY: 'scroll',
         alignItems: 'center',
@@ -42,7 +48,7 @@ export const NavigationWrapper = ({
                 justifyContent: 'space-between',
               }}
               onClick={() => {
-                handleOnClick(element.url);
+                handleOnClick(element.topic);
               }}
             >
               <MainNavigation navigationElement={element.topic} />
