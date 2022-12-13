@@ -18,7 +18,7 @@ export default function VariablesAndStatements() {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        maxWidth: '1024px',
+        maxWidth: '100%',
       }}
     >
       <H1Text title="Variables and Statements" hasMarginBottom />

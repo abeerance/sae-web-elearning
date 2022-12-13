@@ -35,7 +35,7 @@ a {
 }
 
 body {
-  color: #242424;
+  color: #fff;
 }
 
 h1,
@@ -56,6 +56,7 @@ h2 {
 p {
   font-size: calc(18px + (20 - 18) * ((100vw - 300px) / (1600 - 300)));
   line-height: 3rem;
+  color: #fff;
 }
 
 strong {

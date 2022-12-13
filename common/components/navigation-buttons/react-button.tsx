@@ -1,16 +1,27 @@
 import { Box, Typography } from '@mui/material';
+import { CurrentCourseButtonProps } from '../../types/types';
 
-export const ReactButton = () => {
+export const ReactButton = ({
+  currentCourse,
+  setCurrentCourse,
+}: CurrentCourseButtonProps) => {
   return (
     <Box
       component="button"
       sx={{
+        height: '70px',
         margin: '10px',
         border: 'none',
         background: 'none',
         display: 'flex',
         flexDirection: 'column',
+        justifyContent: 'space-between',
         alignItems: 'center',
+      }}
+      onClick={() => {
+        if (currentCourse !== 'react' && setCurrentCourse) {
+          setCurrentCourse('react');
+        }
       }}
     >
       <svg

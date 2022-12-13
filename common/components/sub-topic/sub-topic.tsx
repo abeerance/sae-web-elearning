@@ -10,8 +10,20 @@ type SubTopicProps = {
 export const SubTopic = ({ index, topic, subTopic }: SubTopicProps) => {
   const { t } = useTranslation();
 
+  const handleOpenTopic = () => {};
+
   return (
-    <Box sx={{ display: 'flex', marginBottom: '12px' }}>
+    <Box
+      component="button"
+      sx={{
+        display: 'flex',
+        marginBottom: '12px',
+        width: '100%',
+        border: 'none',
+        background: 'none',
+      }}
+      onClick={handleOpenTopic}
+    >
       <Typography
         sx={{
           fontSize: '20px',
@@ -28,7 +40,7 @@ export const SubTopic = ({ index, topic, subTopic }: SubTopicProps) => {
       >
         -
       </Typography>
-      <Typography sx={{ fontSize: '20px' }}>
+      <Typography sx={{ fontSize: '20px', textAlign: 'left' }}>
         {t(`sections.${topic}.${subTopic}`)}
       </Typography>
     </Box>

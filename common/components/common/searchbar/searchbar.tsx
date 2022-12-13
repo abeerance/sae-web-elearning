@@ -1,21 +1,27 @@
 import { Box, Typography } from '@mui/material';
+import { useAtom } from 'jotai';
+import { collapsed } from '../../../../pages/_app';
 
 export default function Searchbar() {
+  const [navCollapsed] = useAtom(collapsed);
+
   return (
     <Box
       sx={{
         height: '5rem',
         width: '100%',
-        background: '#fff',
-        borderRadius: '15px',
-        border: '1px solid #232323',
-        boxShadow: '3px 3px 0 2px #232323',
+        background: '#f9f9f9',
+        borderRadius: '10px',
+        boxShadow: '4px 3px 0 2px #EF6A04',
         padding: '1rem',
-        display: 'flex',
+        display: `${navCollapsed ? 'none' : 'flex'}`,
         alignItems: 'center',
+        margin: '2rem 0 3rem',
       }}
     >
-      <Typography sx={{ fontSize: '2rem' }}>Search</Typography>
+      <Typography sx={{ fontSize: '2rem', color: '#14181D' }}>
+        Search
+      </Typography>
     </Box>
   );
 }
