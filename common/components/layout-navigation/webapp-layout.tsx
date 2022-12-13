@@ -1,15 +1,12 @@
 import { Box } from '@mui/material';
-import { atom, useAtom } from 'jotai';
 import { useRouter } from 'next/router';
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import SideBar from './sidebar';
 
-const course = atom('home');
-
 export default function WebbAppLayout(props: ReactNode) {
-  const [currentCourse, setCurrentCourse] = useAtom(course);
-
   const router = useRouter();
+  const topic = router.asPath.split('/')[1];
+  const [currentCourse, setCurrentCourse] = useState(topic);
 
   return (
     <main>

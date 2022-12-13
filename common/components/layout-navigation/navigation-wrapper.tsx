@@ -38,14 +38,14 @@ export const NavigationWrapper = ({
               component="button"
               key={element.topic}
               sx={{
-                width: 'calc(100% - 20px)',
+                width: '100%',
                 display: 'flex',
                 alignItems: 'center',
                 background: 'none',
-                overflowY: 'scroll',
                 border: 'none',
                 cursor: 'pointer',
                 justifyContent: 'space-between',
+                marginY: '2px',
               }}
               onClick={() => {
                 handleOnClick(element.topic);
