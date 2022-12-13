@@ -10,7 +10,7 @@ export default function Searchbar() {
       sx={{
         height: '5rem',
         width: '100%',
-        background: '#fff',
+        background: '#f9f9f9',
         borderRadius: '10px',
         boxShadow: '4px 3px 0 2px #EF6A04',
         padding: '1rem',
@@ -19,7 +19,9 @@ export default function Searchbar() {
         margin: '2rem 0 3rem',
       }}
     >
-      <Typography sx={{ fontSize: '2rem' }}>Search</Typography>
+      <Typography sx={{ fontSize: '2rem', color: '#14181D' }}>
+        Search
+      </Typography>
     </Box>
   );
 }

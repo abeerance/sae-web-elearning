@@ -17,7 +17,7 @@ export default function WebbAppLayout(props: ReactNode) {
           height: '100vh',
           overflow: 'hidden',
           position: 'relative',
-          background: '#232227',
+          background: '#0C1116',
         }}
       >
         <SideBar
@@ -38,7 +38,7 @@ export default function WebbAppLayout(props: ReactNode) {
               width: '100%',
               height: '100%',
               padding: '2rem 4rem',
-              background: '#fff',
+              background: '#14181D',
               borderRadius: '10px',
               overflowY: 'scroll',
               boxShadow:

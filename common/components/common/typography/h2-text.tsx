@@ -27,17 +27,6 @@ export const H2Text = ({
       <Typography variant="h2" sx={{ position: 'relative', zIndex: 50 }}>
         {sectionNames ? t(`sections.${title}.name`) : title}
       </Typography>
-      <Box
-        sx={{
-          height: '25px',
-          width: '25px',
-          background: '#F58700',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: 10,
-        }}
-      />
     </Box>
   );
 };

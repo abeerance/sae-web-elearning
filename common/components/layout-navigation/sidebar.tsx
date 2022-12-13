@@ -18,7 +18,7 @@ export default function SideBar({
   return (
     <Box
       sx={{
-        background: '#1F1D2C',
+        background: '#0C1116',
         height: '100%',
         width: `${navCollapsed ? '80px' : '300px'}`,
         display: 'flex',
