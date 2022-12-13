@@ -1,6 +1,5 @@
 import { Box } from '@mui/material';
 import { useAtom } from 'jotai';
-import { useRouter } from 'next/router';
 import { collapsed } from '../../../pages/_app';
 import { CurrentCourseButtonProps } from '../../types/types';
 import { Globals } from '../../utils/utils';
@@ -10,16 +9,6 @@ export const NavigationWrapper = ({
   currentCourse,
 }: CurrentCourseButtonProps) => {
   const [navCollapsed] = useAtom(collapsed);
-  const router = useRouter();
-
-  const handleOnClick = (module: string) => {
-    if (currentCourse === 'javascript') {
-      router.push({
-        pathname: 'javascript/module/[name]',
-        query: { name: module },
-      });
-    }
-  };
 
   return (
     <Box
@@ -35,7 +24,6 @@ export const NavigationWrapper = ({
         <>
           {Globals.navigationElements.map((element) => (
             <Box
-              component="button"
               key={element.topic}
               sx={{
                 width: '100%',
@@ -47,11 +35,11 @@ export const NavigationWrapper = ({
                 justifyContent: 'space-between',
                 marginY: '2px',
               }}
-              onClick={() => {
-                handleOnClick(element.topic);
-              }}
             >
-              <MainNavigation navigationElement={element.topic} />
+              <MainNavigation
+                navigationElement={element.topic}
+                module={element.url}
+              />
             </Box>
           ))}
         </>

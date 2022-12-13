@@ -30,7 +30,7 @@ export default function WebbAppLayout(props: ReactNode) {
             width: '100%',
             borderRadius: '1rem',
             overflow: 'hidden',
-            padding: '1rem',
+            padding: '1.5rem',
           }}
         >
           <Box
