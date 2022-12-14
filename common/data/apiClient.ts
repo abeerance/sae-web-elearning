@@ -1,10 +1,4 @@
-import axios from 'axios';
-
-export const apiClient = axios.create({
-  baseURL: 'https://sae-web-elearning.directus.app/',
-  headers: {
-    'Content-type': 'application/json',
-  },
-});
-
-export const baseApi = 'https://sae-web-elearning.directus.app/';
+export const graphqlApi = process.env.HYGRAPH_PROJECT_API;
+export const headers = {
+  'content-type': 'application/json',
+};

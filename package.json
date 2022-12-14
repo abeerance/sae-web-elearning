@@ -21,6 +21,8 @@
     "axios": "^1.2.1",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
+    "graphql": "16",
+    "graphql-request": "^5.0.0",
     "i18next": "^22.0.6",
     "jotai": "^1.11.0",
     "next": "13.0.6",

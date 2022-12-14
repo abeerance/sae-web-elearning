@@ -20,7 +20,7 @@ export const MainNavigation = ({
 
   return (
     <>
-      <Link href={url}>
+      <Link href={url} replace>
         <Typography
           sx={{
             fontSize: '16px',
