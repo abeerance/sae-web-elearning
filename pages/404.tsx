@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material';
+import Link from 'next/link';
 import dog from '../common/assets/404-img.png';
 import { ImageWrapper } from '../common/components/common/images/image-wrapper';
 
@@ -44,7 +45,7 @@ export default function Custom404() {
             cursor: 'pointer',
           }}
         >
-          Back to Home
+          <Link href={'/javascript'}>Back to Home</Link>
         </Box>
       </Box>
       <ImageWrapper

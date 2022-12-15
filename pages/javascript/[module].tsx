@@ -1,8 +1,10 @@
 import { gql } from '@apollo/client';
 import { RichText } from '@graphcms/rich-text-react-renderer';
 import { RichTextContent } from '@graphcms/rich-text-types';
-import { Box, Link, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import { t } from 'i18next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import apolloClient from '../../apollo-client';
 
@@ -77,7 +79,8 @@ export default function JavaScriptModule({
                 margin: '5rem auto',
               }}
             >
-              <Link
+              <Typography
+                component="a"
                 sx={{
                   background: '#F58700',
                   fontSize: `calc(18px + (20 - 18) * ((100vw - 300px) / (1600 - 300)))`,
@@ -91,7 +94,7 @@ export default function JavaScriptModule({
                 rel={rel || 'noopener noreferrer'}
               >
                 {children}
-              </Link>
+              </Typography>
             </Box>
           ),
           // @ts-expect-error: TODO
@@ -128,6 +131,61 @@ export default function JavaScriptModule({
               />
             </Box>
           ),
+          ul: ({ children }) => (
+            <Box component="ul" sx={{ width: '100%', margin: '5rem 0' }}>
+              {children}
+            </Box>
+          ),
+          li: ({ children }) => {
+            return (
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  position: 'relative',
+                  marginBottom: '1.5rem',
+                }}
+              >
+                <Box
+                  sx={{
+                    background: '#f58700',
+                    height: '30px',
+                    width: '30px',
+                    position: 'absolute',
+                    top: 8,
+                    left: 0,
+                    borderRadius: '5px',
+                  }}
+                />
+                <Typography
+                  sx={{
+                    fontSize: '35px',
+                    zIndex: 200,
+                    fontWeight: 700,
+                    position: 'relative',
+                    left: 20,
+                    cursor: 'pointer',
+                    textDecoration: 'none',
+                    color: '#f8f8f8',
+                  }}
+                >
+                  <Link
+                    href={`${
+                      // @ts-expect-error: TODO
+                      children && children.props.content[0].children[0].text
+                    }`}
+                  >
+                    {t(
+                      `topics.${
+                        // @ts-expect-error: TODO
+                        children.props.content[0].children[0].text
+                      }`,
+                    )}
+                  </Link>
+                </Typography>
+              </Box>
+            );
+          },
         }}
       />
     </Box>
