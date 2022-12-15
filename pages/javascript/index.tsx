@@ -8,7 +8,7 @@ export default function JavaScriptHome() {
   const { t } = useTranslation();
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%', maxWidth: '1600px' }}>
       <H1Text title="JavaScript Notes and References" />
       <Box sx={{ marginY: '5rem' }}>
         <Paragraph text={t('home.welcome1')} hasMargin />
