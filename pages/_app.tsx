@@ -34,6 +34,9 @@ export default function App({ Component, pageProps }: Props) {
               width: '100%',
               overflowY: 'scroll',
               position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
             }}
           >
             <Component {...pageProps} />
