@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 import { RichText } from '@graphcms/rich-text-react-renderer';
 import { RichTextContent } from '@graphcms/rich-text-types';
-import { Box, Typography } from '@mui/material';
+import { Box, Link, Typography } from '@mui/material';
 import apolloClient from '../../apollo-client';
 import Image from 'next/image';
 
@@ -39,7 +39,7 @@ export default function JavaScriptModule({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        maxWidth: '100%',
+        maxWidth: '1600px',
       }}
     >
       <RichText
@@ -74,8 +74,6 @@ export default function JavaScriptModule({
                   'calc(18px + (20 - 18) * ((100vw - 300px) / (1600 - 300)))',
                 textAlign: 'left',
                 width: '100%',
-                display: 'flex',
-                justifyContent: 'center',
               }}
             >
               {children}
@@ -83,21 +81,27 @@ export default function JavaScriptModule({
           ),
           a: ({ children, openInNewTab, href, rel }) => (
             <Typography
-              className="test"
-              component="a"
               sx={{
-                background: '#F58700',
-                fontSize: `calc(18px + (20 - 18) * ((100vw - 300px) / (1600 - 300)))`,
-                padding: '1.8rem 4rem',
+                display: 'flex',
+                justifyContent: 'center',
                 margin: '5rem auto',
-                borderRadius: '10px',
-                position: 'relative',
               }}
-              href={href}
-              target={openInNewTab ? '_blank' : '_self'}
-              rel={rel || 'noopener noreferrer'}
             >
-              {children}
+              <Link
+                sx={{
+                  background: '#F58700',
+                  fontSize: `calc(18px + (20 - 18) * ((100vw - 300px) / (1600 - 300)))`,
+                  padding: '1.8rem 4rem',
+                  textDecoration: 'none',
+                  borderRadius: '10px',
+                  color: '#f8f8f8',
+                }}
+                href={href}
+                target={openInNewTab ? '_blank' : '_self'}
+                rel={rel || 'noopener noreferrer'}
+              >
+                {children}
+              </Link>
             </Typography>
           ),
           // @ts-expect-error: TODO
@@ -123,7 +127,15 @@ export default function JavaScriptModule({
                 marginBottom: '5rem',
               }}
             >
-              <Image src={src} alt={altText} fill quality={100} />
+              <Image
+                src={src}
+                alt={altText}
+                fill
+                quality={100}
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+              />
             </Box>
           ),
         }}

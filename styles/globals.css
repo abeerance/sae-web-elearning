@@ -58,8 +58,8 @@ p {
   color: #fff;
 }
 
-strong {
-  background: #24331e;
+b {
+  background: #25325b;
   border-radius: 3px;
   padding: 5px 8px;
   color: #fff;
@@ -78,4 +78,8 @@ strong {
 .text-container ul > li {
   margin-bottom: 15px;
   list-style: none;
+}
+
+.content-container b {
+  white-space: nowrap;
 }/*# sourceMappingURL=globals.css.map */
