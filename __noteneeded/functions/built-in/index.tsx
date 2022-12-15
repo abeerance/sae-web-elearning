@@ -6,9 +6,9 @@ import consoleClearExample from '../../../../common/assets/javascript-assets/fun
 import scrollToExample1 from '../../../../common/assets/javascript-assets/functions/function4.webp';
 import scrollToExample2 from '../../../../common/assets/javascript-assets/functions/function5.webp';
 import scrollToExample3 from '../../../../common/assets/javascript-assets/functions/function6.gif';
-import { ImageWrapper } from '../../../../common/components/common/images/image-wrapper';
-import { H1Text } from '../../../../common/components/common/typography/h1-text';
-import { Paragraph } from '../../../../common/components/common/typography/paragraph';
+import { ImageWrapper } from '../../../common/components/common/images/image-wrapper';
+import { H1Text } from '../../../common/components/common/typography/h1-text';
+import { Paragraph } from '../../../common/components/common/typography/paragraph';
 
 export default function BuiltInFunctions() {
   return (

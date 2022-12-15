@@ -4,35 +4,24 @@ import { RichTextContent } from '@graphcms/rich-text-types';
 import { Box, Link, Typography } from '@mui/material';
 import apolloClient from '../../apollo-client';
 import Image from 'next/image';
-
-export async function getServerSideProps() {
-  const { data } = await apolloClient.query({
-    query: gql`
-      query JavaScriptModules {
-        javaScriptModules {
-          module
-          content {
-            json
-          }
-        }
-      }
-    `,
-  });
-
-  return {
-    props: {
-      content: data.javaScriptModules[0].content.json,
-    },
-  };
-}
+import { useEffect, useState } from 'react';
 
 export default function JavaScriptModule({
   content,
 }: {
   content: RichTextContent;
 }) {
-  console.log(content);
-  return (
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const checkLoading = () => {
+      if (content) {
+        setLoading(false);
+      }
+    };
+    checkLoading();
+  }, [setLoading]);
+
+  return !loading ? (
     <Box
       className="content-container"
       sx={{
@@ -80,7 +69,8 @@ export default function JavaScriptModule({
             </Typography>
           ),
           a: ({ children, openInNewTab, href, rel }) => (
-            <Typography
+            <Box
+              component="span"
               sx={{
                 display: 'flex',
                 justifyContent: 'center',
@@ -102,7 +92,7 @@ export default function JavaScriptModule({
               >
                 {children}
               </Link>
-            </Typography>
+            </Box>
           ),
           // @ts-expect-error: TODO
           img: ({
@@ -141,5 +131,33 @@ export default function JavaScriptModule({
         }}
       />
     </Box>
+  ) : (
+    <></>
   );
+}
+
+export async function getServerSideProps({
+  resolvedUrl,
+}: {
+  resolvedUrl: string;
+}) {
+  const module = resolvedUrl.split('/')[2];
+  const { data } = await apolloClient.query({
+    query: gql`
+      query JavaScriptModules {
+        javaScriptModules(where: { module: "${module}" }) {
+          module
+          content {
+            json
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      content: data.javaScriptModules[0].content.json,
+    },
+  };
 }

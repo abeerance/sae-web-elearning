@@ -1,6 +1,5 @@
 import { Typography } from '@mui/material';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 import { RiArrowDownSLine } from 'react-icons/ri';
 
@@ -14,13 +13,10 @@ export const MainNavigation = ({
   module,
 }: MainNavigationProps) => {
   const { t } = useTranslation();
-  const router = useRouter();
-  const topic = router.asPath.split('/')[1];
-  const url = `${topic}${module}`;
 
   return (
     <>
-      <Link href={url} replace>
+      <Link href={`/javascript${module}`} replace>
         <Typography
           sx={{
             fontSize: '16px',

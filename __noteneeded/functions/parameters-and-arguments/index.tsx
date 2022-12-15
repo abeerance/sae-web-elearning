@@ -2,9 +2,9 @@ import { Box } from '@mui/system';
 import { useTranslation } from 'react-i18next';
 import argsAndParamExample1 from '../../../../common/assets/javascript-assets/functions/args1.webp';
 import argsAndParamExample2 from '../../../../common/assets/javascript-assets/functions/args2.webp';
-import { ImageWrapper } from '../../../../common/components/common/images/image-wrapper';
-import { H1Text } from '../../../../common/components/common/typography/h1-text';
-import { Paragraph } from '../../../../common/components/common/typography/paragraph';
+import { ImageWrapper } from '../../../common/components/common/images/image-wrapper';
+import { H1Text } from '../../../common/components/common/typography/h1-text';
+import { Paragraph } from '../../../common/components/common/typography/paragraph';
 
 export default function ParametersAndArguments() {
   const { t } = useTranslation();

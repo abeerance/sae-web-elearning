@@ -9,10 +9,10 @@ import differentWaysExample2 from '../../../../common/assets/javascript-assets/f
 import differentWaysExample3 from '../../../../common/assets/javascript-assets/functions/different3.webp';
 import differentWaysExample4 from '../../../../common/assets/javascript-assets/functions/different4.webp';
 import differentWaysExample5 from '../../../../common/assets/javascript-assets/functions/different5.webp';
-import { ImageWrapper } from '../../../../common/components/common/images/image-wrapper';
-import { H1Text } from '../../../../common/components/common/typography/h1-text';
-import { H2Text } from '../../../../common/components/common/typography/h2-text';
-import { Paragraph } from '../../../../common/components/common/typography/paragraph';
+import { ImageWrapper } from '../../../common/components/common/images/image-wrapper';
+import { H1Text } from '../../../common/components/common/typography/h1-text';
+import { H2Text } from '../../../common/components/common/typography/h2-text';
+import { Paragraph } from '../../../common/components/common/typography/paragraph';
 
 export default function DifferentWaysToDeclareFunctions() {
   const { t } = useTranslation();
