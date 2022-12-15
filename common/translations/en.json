@@ -23,25 +23,6 @@
     "welcome2": "These notes are intended for SAE students only and can be used as a stand alone guide or as a quick reference for all the different parts of JavaScript.",
     "welcome3": "If you find anything missing or a spelling mistake, please let me know under hadrian.chio@gmail.com"
   },
-  "basics": {
-    "intro1": "<p>JavaScript is a lightweight programming language that web developers commonly use to create more dynamic interactions when developing web pages, applications, servers, and or even games.</p>",
-    "intro2": "<p>Developers generally use JavaScript alongside HTML and CSS The scripting language works well with CSS in formatting HTML elements. However, JavaScript still maintains user interaction, something that CSS cannot do by itself.</p>",
-    "intro3": "<p>JavaScripts implementations within the web, mobile application, and game development make the scripting language worth learning.</p>",
-    "usecase1": "<p>It was a general-purpose scripting language to ensure web pages interoperability across different browsers and devices.</p>",
-    "usecase2": "<p>JavaScript has continued to grow alongside new browsers like Mozilla Firefox and Google Chrome since then. The latter even started developing the first modern JavaScript engine, called V8, which compiles bytecode into native machine code.</p>",
-    "usecase3": "<p>Today, JavaScript has plenty of frameworks and libraries to simplify complex projects, such as AngularJS, jQuery, and ReactJS.</p>",
-    "usecase4": "<p>Originally run on the client-side, the JavaScript implementation has branched out to the server-side after the Node.js development ‒ a cross-platform server environment built on the Google Chrome JavaScript V8 engine.</p>",
-    "terminalIntro": "<p>In this section we will briefly go through your choices of terminal, if Node.js and npm are installed, some command line basics as well a quick intro to the recommended editor setup</p>",
-    "terminal1": "<p>You can use the built in terminal application which on a Mac you can find under Applications > Utilities > Terminal. I myself am a big fan of the terminal called iTerm, but in the end, they all have the same use case.</p>",
-    "terminal2": "<p>On Windows, the terminal is called Command Prompt. You can access this by going to Start > All Programs > Accessories > Command Prompt. There is another terminal for Windows called Cmder.</p>",
-    "nodejs1": "<p>Next up, we need Node.js. If you haven't got it installed yet, install the latest LTS version with the button below👇</p>",
-    "nodejs2": "<p>We will primarily use Node.js for its tooling, bundling, formatting, etc. So for our sanity we will go ahead and install it.</p>",
-    "nodejs3": "<p>To check if you have Node.js or what version you have installed, you can check with your terminal ov choice like so:</p>",
-    "npm1": "<p>Last but not least you have to choose which package manager you are going to use. All of them are more or less the same. NPM is the most known, but it is slighty slower than the other 2. PNPM has the same syntax as NPM but is way faster. The caveat here is, that PNPM doesn't work everywhere, shuch as the deployment from GitHub to Digital Ocean. Personally, I am using Yarn most of the time.</p>",
-    "runjs1": "<p>That's a good question. to run a JavaScript Script you have 3 different methods. The simplest way is to use the script-tag anywhere in your HTML. But it might get somewhat chaotic once you have a lot of JavaScript code. The other 2 ways are more common. You can either link your script in the HTML-Body or you can link it in the HTML-Head with a defer:</p>",
-    "console1": "<p>The console is one of the most vital tools you can use when using JavaScript. To access it open the developer tools from your desired browser and navigate to the console. Whatever you write inside a console.log() in your JavaScript file, it will be displayed in the console of the browser. You can also see every error and warning inside the console.</p>",
-    "console2": "<p>It is insanely useful for debugging purposes. Imagine you're trying to work with an API, but you don't know the structure of the response you get. The console will help you to see the structure of the API and much much more.</p>"
-  },
   "variablesAndStatements": {
     "intro1": "<p>Variables are a building block of JavaScript, and you can't use JavaScript without knowing variables. We will cover what they are, what the different types of them are, what declaration means as well as what a statement is in JavaScript.</p>",
     "intro2": "<p>We have three different options to declare a variable in JavaScript and each of them have their own use-case. The three different options are:</p>",
