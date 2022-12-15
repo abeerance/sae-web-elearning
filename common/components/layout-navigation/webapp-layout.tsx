@@ -46,7 +46,7 @@ export default function WebbAppLayout(props: ReactNode) {
             }}
           >
             {/* @ts-ignore: isdefined */}
-            <Box>{props.children}</Box>
+            {props.children}
           </Box>
         </Box>
       </Box>

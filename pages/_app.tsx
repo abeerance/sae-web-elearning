@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: Props) {
         {getLayout(
           <Box
             sx={{
-              height: '100vh',
+              height: '100%',
               width: '100%',
               overflowY: 'scroll',
               position: 'relative',
