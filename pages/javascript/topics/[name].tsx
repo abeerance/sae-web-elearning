@@ -4,9 +4,9 @@ import { RichTextContent } from '@graphcms/rich-text-types';
 import { Box, Link, Typography } from '@mui/material';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import apolloClient from '../../apollo-client';
+import apolloClient from '../../../apollo-client';
 
-export default function JavaScriptModule({
+export default function JavaScriptTopic({
   content,
 }: {
   content: RichTextContent;
@@ -155,15 +155,9 @@ export async function getServerSideProps({
     `,
   });
 
-  if (data.javaScriptModules[0]) {
-    return {
-      props: {
-        content: data.javaScriptModules[0].content.json,
-      },
-    };
-  } else {
-    return {
-      props: {},
-    };
-  }
+  return {
+    props: {
+      content: data.javaScriptModules[0].content.json,
+    },
+  };
 }
