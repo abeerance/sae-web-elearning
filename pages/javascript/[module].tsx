@@ -163,7 +163,7 @@ export async function getServerSideProps({
     };
   } else {
     return {
-      props: {},
+      notFound: true,
     };
   }
 }
