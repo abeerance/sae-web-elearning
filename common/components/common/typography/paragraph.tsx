@@ -1,5 +1,4 @@
 import { Typography } from '@mui/material';
-import Tiptap from '../wysiwyg/tiptap';
 
 type ParagraphProps = {
   text: string;
