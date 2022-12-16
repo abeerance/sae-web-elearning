@@ -22,7 +22,14 @@
     "built-in-functions": "Built-In Functions",
     "custom-functions": "Custom Functions",
     "parameters-and-arguments": "Parameters and Arguments",
-    "different-ways-to-declare-functions": "Different ways to declare a Function"
+    "different-ways-to-declare-functions": "Different ways to declare a Function",
+    "selecting-elements": "Selecting Elements",
+    "element-properties-and-methods": "Element Properties and Methods",
+    "working-with-classes": "Working with Classes",
+    "built-in-and-custom-data-attributes": "Built-In and Custom Data Attributes",
+    "creating-html": "Creating HTML",
+    "html-from-strings": "HTML from strings",
+    "traversing-and-removing-nodes": "Traversing and removing Nodes"
   },
   "home": {
     "welcome1": "Hey there! Welcome to the beginner JavaScript module from SAE Zurich.",

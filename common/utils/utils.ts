@@ -35,19 +35,6 @@ export class Globals {
     { topic: 'exercises', url: '/exercises' },
   ];
 
-  public static readonly functionsSubtopics = [
-    {
-      topic: 'functions',
-      subTopics: [
-        'built-in',
-        'custom-functions',
-        'different-ways-to-declare-functions',
-      ],
-    },
-  ];
-
-  public static readonly subNavigation = [];
-
   public static readonly sectionContents = [
     {
       name: 'basics',

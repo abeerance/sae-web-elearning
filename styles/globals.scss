@@ -82,3 +82,19 @@ b {
 .content-container b {
   white-space: nowrap;
 }
+
+pre {
+  margin: 40px 0;
+  padding: 2rem;
+  min-width: 600px;
+  max-width: 1024px;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 8px 32px 0 rgba(24, 41, 85, 0.37);
+  backdrop-filter: blur(17.5px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border-radius: 10px;
+  font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
+  align-self: flex-start;
+  position: relative;
+  left: 30px;
+}
