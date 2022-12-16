@@ -1,14 +1,50 @@
 import { Box } from '@mui/material';
 import { useAtom } from 'jotai';
+import { useLayoutEffect, useState } from 'react';
 import { collapsed } from '../../../pages/_app';
-import { CurrentCourseButtonProps } from '../../types/types';
 import { Globals } from '../../utils/utils';
 import { MainNavigation } from './main-navigation';
 
+type NavigationWrapperProps = {
+  currentCourse: string;
+  innerHeight: number | null;
+  collapseHeight: number;
+  searchbarHeight: number;
+  moduleHeight: number;
+  userBarheight: number;
+};
+
 export const NavigationWrapper = ({
   currentCourse,
-}: CurrentCourseButtonProps) => {
+  innerHeight,
+  collapseHeight,
+  searchbarHeight,
+  moduleHeight,
+  userBarheight,
+}: NavigationWrapperProps) => {
   const [navCollapsed] = useAtom(collapsed);
+  const [wrapperHeight, setWrapperHeight] = useState(0);
+
+  useLayoutEffect(() => {
+    if (innerHeight !== null) {
+      setWrapperHeight(
+        innerHeight -
+          collapseHeight -
+          searchbarHeight -
+          moduleHeight -
+          userBarheight,
+      );
+    }
+  }, [
+    setWrapperHeight,
+    innerHeight,
+    collapseHeight,
+    searchbarHeight,
+    moduleHeight,
+    userBarheight,
+  ]);
+
+  console.log(wrapperHeight);
 
   return (
     <Box
@@ -18,6 +54,8 @@ export const NavigationWrapper = ({
         flexDirection: 'column',
         overflowY: 'scroll',
         alignItems: 'center',
+        marginY: '2rem',
+        height: `${wrapperHeight - 140}px !important`,
       }}
     >
       {currentCourse === 'javascript' ? (

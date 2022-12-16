@@ -1,12 +1,28 @@
 import { Box, Typography } from '@mui/material';
 import { useAtom } from 'jotai';
+import React, { RefObject, useLayoutEffect } from 'react';
 import { collapsed } from '../../../../pages/_app';
 
-export default function Searchbar() {
+type SearchbarProps = {
+  searchbarRef: RefObject<HTMLDivElement>;
+  setSearchbarHeight: React.Dispatch<React.SetStateAction<number>>;
+};
+
+export default function Searchbar({
+  searchbarRef,
+  setSearchbarHeight,
+}: SearchbarProps) {
   const [navCollapsed] = useAtom(collapsed);
+
+  useLayoutEffect(() => {
+    if (searchbarRef.current !== null) {
+      setSearchbarHeight(searchbarRef.current.clientHeight);
+    }
+  }, [setSearchbarHeight, searchbarRef]);
 
   return (
     <Box
+      ref={searchbarRef}
       sx={{
         height: '5rem',
         width: '100%',
