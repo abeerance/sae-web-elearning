@@ -1,34 +1,77 @@
 import { Box } from '@mui/material';
 import { useAtom } from 'jotai';
-import { RiArrowLeftRightLine } from 'react-icons/ri';
+import React, { RefObject, useLayoutEffect } from 'react';
+import { RiArrowLeftRightLine, RiLogoutBoxRLine } from 'react-icons/ri';
 import { collapsed } from '../../../../pages/_app';
 
-export const CollapseButton = () => {
+type CollapseButtonProps = {
+  collapseRef: RefObject<HTMLDivElement>;
+  setCollapseHeight: React.Dispatch<React.SetStateAction<number>>;
+};
+
+export const CollapseContainer = ({
+  collapseRef,
+  setCollapseHeight,
+}: CollapseButtonProps) => {
   const [navCollapsed, setNavCollapsed] = useAtom(collapsed);
+
+  useLayoutEffect(() => {
+    if (collapseRef.current !== null) {
+      setCollapseHeight(collapseRef.current.clientHeight);
+    }
+  }, [setCollapseHeight, collapseRef]);
 
   return (
     <Box
-      component="button"
+      ref={collapseRef}
       sx={{
-        position: 'fixed',
-        zIndex: 999,
-        background: '#f8f8f8',
-        bottom: '20px',
-        border: 'none',
-        cursor: 'pointer',
-        left: `${navCollapsed ? '20px' : '200px'} `,
-        padding: '1rem',
-        borderRadius: '10px',
-      }}
-      onClick={() => {
-        if (!navCollapsed) {
-          setNavCollapsed(true);
-        } else {
-          setNavCollapsed(false);
-        }
+        bottom: '15px',
+        position: 'absolute',
+        display: 'flex',
+        width: '100%',
+        paddingX: '1.5rem',
+        justifyContent: 'space-between',
+        flexDirection: `${navCollapsed ? 'column' : 'row'}`,
       }}
     >
-      <RiArrowLeftRightLine size={30} color={'#232323'} />
+      <Box
+        component="button"
+        sx={{
+          background: '#f8f8f8',
+          border: 'none',
+          cursor: 'pointer',
+          padding: '1rem',
+          borderRadius: '10px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <RiLogoutBoxRLine size={30} color={'#232323'} />
+      </Box>
+      <Box
+        component="button"
+        sx={{
+          background: '#f8f8f8',
+          border: 'none',
+          cursor: 'pointer',
+          padding: '1rem',
+          borderRadius: '10px',
+          marginTop: `${navCollapsed ? '20px' : 0}`,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+        onClick={() => {
+          if (!navCollapsed) {
+            setNavCollapsed(true);
+          } else {
+            setNavCollapsed(false);
+          }
+        }}
+      >
+        <RiArrowLeftRightLine size={30} color={'#232323'} />
+      </Box>
     </Box>
   );
 };

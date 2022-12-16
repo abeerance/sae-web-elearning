@@ -1,11 +1,23 @@
 import { Box, Typography } from '@mui/material';
 import { useAtom } from 'jotai';
 import Image from 'next/image';
+import React, { RefObject, useLayoutEffect } from 'react';
 import { collapsed } from '../../../pages/_app';
 import placeholderProfile from '../../assets/placeholder-profile.webp';
 
-export const UserBar = () => {
+type UserBarProps = {
+  userBarRef: RefObject<HTMLDivElement>;
+  setUserBarHeight: React.Dispatch<React.SetStateAction<number>>;
+};
+
+export const UserBar = ({ userBarRef, setUserBarHeight }: UserBarProps) => {
   const [navCollapsed] = useAtom(collapsed);
+
+  useLayoutEffect(() => {
+    if (userBarRef.current !== null) {
+      setUserBarHeight(userBarRef.current.clientHeight);
+    }
+  }, [setUserBarHeight, userBarRef]);
 
   return (
     <Box
@@ -17,6 +29,7 @@ export const UserBar = () => {
         alignItems: 'center',
         margin: '35px 0 20px',
       }}
+      ref={userBarRef}
     >
       <Box
         sx={{
