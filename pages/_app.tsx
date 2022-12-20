@@ -1,4 +1,6 @@
+import { ApolloProvider } from '@apollo/client';
 import { UserProvider } from '@auth0/nextjs-auth0/client';
+
 import { Box, createTheme, ThemeProvider } from '@mui/material';
 import { atom } from 'jotai';
 import type { AppProps } from 'next/app';
@@ -6,6 +8,7 @@ import WebbAppLayout from '../common/components/layout-navigation/webapp-layout'
 
 import '../common/i18n/config';
 import { Page } from '../common/types/page';
+import apolloClient from '../lib/apollo-client';
 import '../styles/globals.css';
 
 const webAppTheme = createTheme({
@@ -28,24 +31,26 @@ export default function App({ Component, pageProps }: Props) {
   return (
     <ThemeProvider theme={webAppTheme}>
       <UserProvider>
-        {/* @ts-ignore: isAsignable */}
-        <Layout>
-          {getLayout(
-            <Box
-              sx={{
-                height: '100%',
-                width: '100%',
-                overflowY: 'scroll',
-                position: 'relative',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}
-            >
-              <Component {...pageProps} />
-            </Box>,
-          )}
-        </Layout>
+        <ApolloProvider client={apolloClient}>
+          {/* @ts-ignore: isAsignable */}
+          <Layout>
+            {getLayout(
+              <Box
+                sx={{
+                  height: '100%',
+                  width: '100%',
+                  overflowY: 'scroll',
+                  position: 'relative',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}
+              >
+                <Component {...pageProps} />
+              </Box>,
+            )}
+          </Layout>
+        </ApolloProvider>
       </UserProvider>
     </ThemeProvider>
   );

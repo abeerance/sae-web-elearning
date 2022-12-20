@@ -6,7 +6,7 @@ import { t } from 'i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import apolloClient from '../../apollo-client';
+import apolloClient from '../../lib/apollo-client';
 
 export default function JavaScriptModule({
   content,
