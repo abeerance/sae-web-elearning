@@ -1,13 +1,10 @@
+import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
 import { Box, createTheme, ThemeProvider } from '@mui/material';
 import { atom } from 'jotai';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import WebbAppLayout from '../common/components/layout-navigation/webapp-layout';
-import {
-  AuthContext,
-  AuthContextProvider,
-} from '../common/context/auth-context';
 
 import '../common/i18n/config';
 import { Page } from '../common/types/page';
@@ -30,18 +27,21 @@ export default function App({ Component, pageProps }: Props) {
   const getLayout = Component.getLayout ?? ((page) => page);
   const Layout = Component.layout ?? WebbAppLayout;
   const router = useRouter();
-
-  const signInTesting = useContext(AuthContext);
+  const { user, isAuthenticated, isLoading } = useAuth0();
 
   useEffect(() => {
-    Object.keys(signInTesting.user).length === 0
-      ? router.push('/session')
-      : router.push('/');
-  });
+    const checkAuthentification = () => {
+      !isAuthenticated ? router.push('/session') : router.push('/');
+    };
+    checkAuthentification();
+  }, [isAuthenticated]);
 
   return (
     <ThemeProvider theme={webAppTheme}>
-      <AuthContextProvider>
+      <Auth0Provider
+        domain="dev-63ab4rto.eu.auth0.com"
+        clientId="bjoTKgW288aNwle7jMbmhZJNUHJrK7Hd"
+      >
         {/* @ts-ignore: isAsignable */}
         <Layout>
           {getLayout(
@@ -60,7 +60,7 @@ export default function App({ Component, pageProps }: Props) {
             </Box>,
           )}
         </Layout>
-      </AuthContextProvider>
+      </Auth0Provider>
     </ThemeProvider>
   );
 }

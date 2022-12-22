@@ -1,3 +1,4 @@
+import { useAuth0 } from '@auth0/auth0-react';
 import { Box } from '@mui/material';
 import { useAtom } from 'jotai';
 import { useLayoutEffect, useRef, useState } from 'react';
@@ -25,6 +26,7 @@ export default function SideBar({
   const [searchbarHeight, setSearchbarHeight] = useState(0);
   const [collapseHeight, setCollapseHeight] = useState(0);
   const { innerHeight } = useWindowSize();
+  const { isAuthenticated } = useAuth0();
 
   useLayoutEffect(() => {
     if (moduleRef.current !== null) {
@@ -39,7 +41,7 @@ export default function SideBar({
         height: '100%',
         maxHeight: '100vh',
         width: `${navCollapsed ? '80px' : '300px'}`,
-        display: 'flex',
+        display: `${isAuthenticated ? 'flex' : 'none'}`,
         flexDirection: 'column',
         alignItems: 'center',
         overflowY: 'scroll',
