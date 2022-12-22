@@ -31,6 +31,7 @@ export default function JavaScriptModule({
         flexDirection: 'column',
         alignItems: 'center',
         maxWidth: '1600px',
+        width: '100%',
       }}
     >
       <RichText

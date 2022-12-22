@@ -44,8 +44,6 @@ export const NavigationWrapper = ({
     userBarheight,
   ]);
 
-  console.log(wrapperHeight);
-
   return (
     <Box
       sx={{
