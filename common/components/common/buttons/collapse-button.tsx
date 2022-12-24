@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Link } from '@mui/material';
 import { useAtom } from 'jotai';
 import React, { RefObject, useLayoutEffect } from 'react';
 import { RiArrowLeftRightLine, RiLogoutBoxRLine } from 'react-icons/ri';
@@ -34,8 +34,8 @@ export const CollapseContainer = ({
         flexDirection: `${navCollapsed ? 'column' : 'row'}`,
       }}
     >
-      <Box
-        component="button"
+      <Link
+        href="/api/auth/logout"
         sx={{
           background: '#f8f8f8',
           border: 'none',
@@ -48,7 +48,7 @@ export const CollapseContainer = ({
         }}
       >
         <RiLogoutBoxRLine size={30} color={'#232323'} />
-      </Box>
+      </Link>
       <Box
         component="button"
         sx={{

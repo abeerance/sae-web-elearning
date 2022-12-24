@@ -1,9 +1,7 @@
-import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 import { Box, createTheme, ThemeProvider } from '@mui/material';
 import { atom } from 'jotai';
 import type { AppProps } from 'next/app';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import WebbAppLayout from '../common/components/layout-navigation/webapp-layout';
 
 import '../common/i18n/config';
@@ -26,22 +24,10 @@ export const collapsed = atom(false);
 export default function App({ Component, pageProps }: Props) {
   const getLayout = Component.getLayout ?? ((page) => page);
   const Layout = Component.layout ?? WebbAppLayout;
-  const router = useRouter();
-  const { user, isAuthenticated, isLoading } = useAuth0();
-
-  useEffect(() => {
-    const checkAuthentification = () => {
-      !isAuthenticated ? router.push('/session') : router.push('/');
-    };
-    checkAuthentification();
-  }, [isAuthenticated]);
 
   return (
     <ThemeProvider theme={webAppTheme}>
-      <Auth0Provider
-        domain="dev-63ab4rto.eu.auth0.com"
-        clientId="bjoTKgW288aNwle7jMbmhZJNUHJrK7Hd"
-      >
+      <UserProvider>
         {/* @ts-ignore: isAsignable */}
         <Layout>
           {getLayout(
@@ -60,7 +46,7 @@ export default function App({ Component, pageProps }: Props) {
             </Box>,
           )}
         </Layout>
-      </Auth0Provider>
+      </UserProvider>
     </ThemeProvider>
   );
 }

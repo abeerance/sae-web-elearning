@@ -34,7 +34,6 @@ export const ImageWrapper = ({
       <Box
         sx={{
           width: `${fixedWidth ? width : 1}`,
-          maxWidth: '800px',
           height: height,
           maxHeight: '600px',
           minHeight: `${hasMinHeight && '600px'}`,
