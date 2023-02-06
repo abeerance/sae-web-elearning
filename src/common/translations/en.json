@@ -1,0 +1,108 @@
+{
+  "welcome": "JavaScript Overview",
+  "navigation": {
+    "basics": "Basics",
+    "variables": "Variables and Statements",
+    "codeQuality": "Code Quality Tooling",
+    "types": "Types and Data Types",
+    "functions": "Functions",
+    "trickyParts": "Tricky Parts",
+    "dom": "The DOM",
+    "events": "Events",
+    "logic": "Logic and Flow Control",
+    "loops": "Loops",
+    "prototypes": "Prototypes, this and new",
+    "advancedFlow": "Advanced Flow Control",
+    "ajax": "Ajax and Data Fetching",
+    "esModules": "ES Modules and structure",
+    "exercises": "Exercises"
+  },
+  "topics": {
+    "built-in-functions": "Built-In Functions",
+    "custom-functions": "Custom Functions",
+    "parameters-and-arguments": "Parameters and Arguments",
+    "different-ways-to-declare-functions": "Different ways to declare a Function",
+    "selecting-elements": "Selecting Elements",
+    "element-properties-and-methods": "Element Properties and Methods",
+    "working-with-classes": "Working with Classes",
+    "built-in-and-custom-data-attributes": "Built-In and Custom Data Attributes",
+    "creating-html": "Creating HTML",
+    "html-from-strings": "HTML from strings",
+    "traversing-and-removing-nodes": "Traversing and removing Nodes"
+  },
+  "home": {
+    "welcome1": "Hey there! Welcome to the beginner JavaScript module from SAE Zurich.",
+    "welcome2": "These notes are intended for SAE students only and can be used as a stand alone guide or as a quick reference for all the different parts of JavaScript.",
+    "welcome3": "If you find anything missing or a spelling mistake, please let me know under hadrian.chio@gmail.com"
+  },
+  "sections": {
+    "basics": {
+      "name": "Basics",
+      "welcome": "Welcome",
+      "editor": "Editor and Terminal Setup",
+      "running": "Running and loading JavaScript"
+    },
+    "variablesAndStatements": {
+      "name": "Variables and Statements",
+      "variables": "Variables",
+      "statements": "Statements",
+      "codeBlocks": "Code Blocks",
+      "varLetConst": "var, let, const",
+      "namingConventions": "Naming Conventions"
+    },
+    "codeQuality": {
+      "name": "Code Quality Tooling",
+      "eslint": "ESLint",
+      "prettier": "Prettier",
+      "config": "Configuration"
+    },
+    "types": {
+      "name": "Types and Data Types",
+      "intro": "Introduction",
+      "strings": "Strings",
+      "numbers": "Numbers",
+      "objects": "Objects",
+      "nullAndUndefined": "Null and undefined",
+      "booleans": "Booleans and equality"
+    },
+    "functions": {
+      "name": "Functions",
+      "intro": "Introduction",
+      "built-in": "Built-In Functions",
+      "custom-functions": "Custom Functions",
+      "parameters-and-arguments": "Parameters and Arguments",
+      "different-ways-to-declare-functions": "Different ways to declare a Function"
+    },
+    "trickyParts": {
+      "name": "Tricky Parts",
+      "scope": "Scope",
+      "hoisting": "Hoisting",
+      "closures": "Closures"
+    },
+    "dom": {
+      "name": "The DOM",
+      "intro": "DOM Introduction",
+      "selecting": "Selecting Elements",
+      "properties": "Properties and Methods",
+      "classes": "Working with Classes",
+      "customData": "Built-in and Custom Data Attributes",
+      "htmlCreation": "Creating HTML",
+      "templateStrings": "Template Strings",
+      "nodes": "Traversing and Removing Nodes"
+    },
+    "events": {
+      "name": "Events",
+      "eventListener": "Event Listener",
+      "targets": "Targets, Propagation, Capture and Bubbling",
+      "preventDefault": "Prevent Default and Form Events",
+      "accessibility": "Accessibility"
+    },
+    "logicFlow": {
+      "name": "Logic and Flow Control",
+      "statements": "If Statements, Function Returns, TRUE or FALSE",
+      "ternary": "Ternaries and Conditional Abuse",
+      "switch": "Case Switch",
+      "intervals": "Intervals and Timers"
+    }
+  }
+}

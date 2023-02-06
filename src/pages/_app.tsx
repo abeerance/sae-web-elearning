@@ -1,19 +1,28 @@
-import { type AppType } from "next/app";
-import { type Session } from "next-auth";
-import { SessionProvider } from "next-auth/react";
+import { createTheme, ThemeProvider } from '@mui/material';
+import { type Session } from 'next-auth';
+import { SessionProvider } from 'next-auth/react';
+import { type AppType } from 'next/app';
+import '../common/i18n/config';
+import '../styles/globals.css';
+import { api } from '../utils/api';
 
-import { api } from "../utils/api";
-
-import "../styles/globals.css";
+const webAppTheme = createTheme({
+  typography: {
+    fontFamily: ['Outfit', 'sans-serif'].join(','),
+    fontSize: 16,
+  },
+});
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
   return (
-    <SessionProvider session={session}>
-      <Component {...pageProps} />
-    </SessionProvider>
+    <ThemeProvider theme={webAppTheme}>
+      <SessionProvider session={session}>
+        <Component {...pageProps} />
+      </SessionProvider>
+    </ThemeProvider>
   );
 };
 
