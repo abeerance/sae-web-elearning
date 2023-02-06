@@ -4,7 +4,7 @@ import React from 'react';
 import { FiUser } from 'react-icons/fi';
 import { MdOutlineLogout } from 'react-icons/md';
 import { SiJavascript, SiReact, SiTypescript } from 'react-icons/si';
-import { SaeLogo } from '../assets/sae_logo';
+import SaeLogo from '../assets/sae_logo.webp';
 import { DisplayMode } from './display-mode';
 
 type SidebarProps = {
@@ -34,7 +34,7 @@ export default function SideBar({
       }}
     >
       <Box>
-        <SaeLogo />
+        <img src={SaeLogo.src} />
       </Box>
       <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
         <Box
