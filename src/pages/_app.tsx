@@ -1,12 +1,15 @@
-import { createTheme, ThemeProvider } from '@mui/material';
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { type Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 import { type AppType } from 'next/app';
-import '../common/i18n/config';
+import '../i18n/config';
 import '../styles/globals.css';
 import { api } from '../utils/api';
 
 const webAppTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
   typography: {
     fontFamily: ['Outfit', 'sans-serif'].join(','),
     fontSize: 16,
@@ -20,7 +23,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <ThemeProvider theme={webAppTheme}>
       <SessionProvider session={session}>
-        <Component {...pageProps} />
+        <CssBaseline>
+          <Component {...pageProps} />
+        </CssBaseline>
       </SessionProvider>
     </ThemeProvider>
   );
