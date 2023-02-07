@@ -39,6 +39,7 @@ const Home: NextPage = () => {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundImage: 'linear-gradient(to bottom, #1A2238, #0f1021)',
+          margin: '0',
         }}
       >
         <H1Text text="Seems like you are not logged in yet" hasMarginBottom />

@@ -33,7 +33,7 @@ export default function WebbAppLayout(props: ReactNode) {
             borderRadius: `${sessionData?.user ? '20px' : 0}`,
             overflow: 'hidden',
             background: '#F8F8FB',
-            margin: '15px 15px 15px 0',
+            margin: `${sessionData?.user ? '15px 15px 15px 0' : 0}`,
           }}
         >
           {/* @ts-expect-error: isdefined */}
