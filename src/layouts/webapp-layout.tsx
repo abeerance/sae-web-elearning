@@ -27,7 +27,7 @@ export default function WebbAppLayout(props: ReactNode) {
           width: '100%',
           height: '100vh',
           display: 'flex',
-          backgroundImage: 'linear-gradient(to bottom, #18041D, #020204)',
+          backgroundImage: 'linear-gradient(to bottom, #0F131F, #020204)',
         }}
       >
         <SideBar
@@ -45,7 +45,8 @@ export default function WebbAppLayout(props: ReactNode) {
             borderRadius: `${sessionData?.user ? '20px' : 0}`,
             overflow: 'hidden',
             margin: `${sessionData?.user ? '15px 15px 15px 0' : 0}`,
-            backgroundImage: 'linear-gradient(to top, #18041D, #020204)',
+            background: '#020204',
+            // backgroundImage: 'linear-gradient(to bottom, #161614, #020204)',
           }}
         >
           <Box
@@ -57,9 +58,8 @@ export default function WebbAppLayout(props: ReactNode) {
           >
             <Box
               sx={{
-                height: '100%',
+                height: 'calc(100vh - 90px)',
                 margin: '30px 0 0 0',
-                overflowY: 'scroll',
               }}
             >
               {/* @ts-expect-error: isdefined */}

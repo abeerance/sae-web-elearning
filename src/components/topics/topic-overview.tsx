@@ -29,13 +29,13 @@ export const TopicOverview = ({
         position: 'sticky',
         top: 0,
         left: 0,
-        padding: '20px 40px 0',
-        background: '#F9F9F9',
-        borderBottom: '3px solid #E8E8E8',
+        padding: '0 40px 0 0',
+        background: '#030205',
         display: 'flex',
         justifyContent: 'space-between',
         paddingBottom: '20px',
-        height: '80px',
+        height: '60px',
+        zIndex: 99999,
       }}
     >
       <Box
@@ -47,10 +47,10 @@ export const TopicOverview = ({
         }}
       >
         <Typography
+          className="module-name"
           sx={{
-            color: '#FF6A3D',
-            fontWeight: 600,
-            fontSize: '25px',
+            fontWeight: 700,
+            fontSize: '30px',
             display: `${isSearchActive ? 'none' : 'auto'}`,
           }}
         >
@@ -59,7 +59,7 @@ export const TopicOverview = ({
         <Box
           className="searchbar"
           sx={{
-            height: '100%',
+            height: '40px',
             width: '40px',
             background: '#fff',
             display: 'flex',

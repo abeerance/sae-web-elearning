@@ -1,11 +1,13 @@
 import { Box, Typography } from '@mui/material';
+import Image from 'next/image';
 
 type ModuleProps = {
   moduleName: string;
   moduleUrl: string;
+  moduleIndex: number;
 };
 
-export const Module = ({ moduleName, moduleUrl }: ModuleProps) => {
+export const Module = ({ moduleName, moduleUrl, moduleIndex }: ModuleProps) => {
   return (
     <>
       <Box
@@ -14,7 +16,7 @@ export const Module = ({ moduleName, moduleUrl }: ModuleProps) => {
           height: '150px',
           display: 'flex',
           justifyContent: 'space-between',
-          background: '#fff',
+          backgroundImage: 'linear-gradient(to right, #070A10, #131929)',
           padding: '15px',
           border: 'none',
           overflow: 'hidden',
@@ -24,13 +26,24 @@ export const Module = ({ moduleName, moduleUrl }: ModuleProps) => {
         }}
       >
         <Box
-          sx={{ width: '30%', borderRadius: '15px', background: 'orange' }}
-        ></Box>
+          sx={{
+            width: '30%',
+            borderRadius: '15px',
+            overflow: 'hidden',
+            position: 'relative',
+          }}
+        >
+          {/* TODO: Implement real images and remove placeholder */}
+          <Image
+            alt="test"
+            src={`https://source.unsplash.com/random/300x300&${moduleIndex}`}
+            fill
+          />
+        </Box>
         <Box
           sx={{
             width: '65%',
             height: '100%',
-
             overflow: 'hidden',
             display: '-webkit-box',
             WebkitBoxOrient: 'vertical',
@@ -38,7 +51,7 @@ export const Module = ({ moduleName, moduleUrl }: ModuleProps) => {
             textOverflow: 'ellipsis',
           }}
         >
-          <Typography sx={{ color: '#1A2238', fontSize: '17px' }}>
+          <Typography sx={{ color: '#F06B3E', fontSize: '17px' }}>
             Modulename
           </Typography>
           <Typography

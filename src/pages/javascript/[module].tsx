@@ -45,7 +45,6 @@ export default function JavaScriptModule({
           overflowY: 'scroll',
         }}
       >
-        {' '}
         <Box sx={{ height: '100%', overflowY: 'scroll' }}>
           <RichText content={content} />
         </Box>

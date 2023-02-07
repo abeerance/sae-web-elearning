@@ -19,6 +19,10 @@
   display: none;
 }
 
+.module-name {
+  color: #f8f8fc;
+}
+
 /*### ANIMATIONS ###*/
 .searchbar {
   transition: all 0.5s;

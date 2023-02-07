@@ -12,16 +12,17 @@ export default function JavaScriptHome() {
     <Box
       sx={{
         width: '100%',
-        height: '100%',
+        height: 'calc(100% - 90px)',
         display: 'grid',
         gridTemplateColumns: '500px 1fr',
-        overflowY: 'scroll',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
       <Box
         sx={{
-          background: '#F9F9F9',
           position: 'relative',
+          overflowY: 'scroll',
         }}
       >
         <TopicOverview
@@ -36,13 +37,13 @@ export default function JavaScriptHome() {
             flexDirection: 'column',
             gap: '30px',
             overflowY: 'scroll',
-            background: '#F9F9F9',
-            padding: '40px',
+            padding: '20px 40px 0 0',
           }}
         >
           {Globals.navigationElements.map((element) => (
             <Module
               key={element.topic}
+              moduleIndex={element.index}
               moduleName={element.topic}
               moduleUrl={element.url}
             />
@@ -52,10 +53,14 @@ export default function JavaScriptHome() {
       <Box
         sx={{
           width: '100%',
-          height: '100%',
-          background: '#FFF',
+          // height: 'calc(100vh - 90px)',
+          borderRadius: '20px',
+          backgroundImage: 'linear-gradient(to bottom, #0E1320, #020204)',
           overflowY: 'scroll',
-          padding: '25px 50px',
+          padding: '25px 50px 0',
+          position: 'sticky',
+          top: 0,
+          bottom: 0,
         }}
       ></Box>
     </Box>
