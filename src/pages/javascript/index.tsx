@@ -56,7 +56,6 @@ export default function JavaScriptHome() {
       <Box
         sx={{
           width: '100%',
-          // height: 'calc(100vh - 90px)',
           borderRadius: '20px',
           backgroundImage: 'linear-gradient(to bottom, #0E1320, #020204)',
           overflowY: 'scroll',

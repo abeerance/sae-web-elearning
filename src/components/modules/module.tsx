@@ -86,13 +86,6 @@ export const Module = ({
             adjsaodijaodjad asjdoaisjdoa
           </Typography>
         </Box>
-        {/* <Link
-          className="module-navigation"
-          href={`/javascript/${moduleName}`}
-          replace
-        >
-          <H2Text text={moduleName} moduleNames />
-        </Link> */}
       </Box>
     </>
   );

@@ -24,6 +24,7 @@ export default function SideBar({
   sidebarWidth,
 }: SidebarProps) {
   const router = useRouter();
+  const currentRoute = router.pathname.split('/')[1];
 
   return (
     <Box
@@ -61,9 +62,17 @@ export default function SideBar({
             }
           }}
         >
-          <FiUser size={25} stroke="#F8F8FC" />
+          <FiUser
+            size={25}
+            stroke={currentRoute === 'profile' ? '#FF6A3D' : '#F8F8FC'}
+          />
           <Typography
-            sx={{ color: '#F8F8FC', marginTop: '5px', fontSize: '14px' }}
+            sx={{
+              color: `${currentRoute === 'profile' ? '#FF6A3D' : '#F8F8FC'}`,
+              marginTop: '5px',
+              fontSize: '14px',
+              fontWeight: `${currentRoute === 'profile' ? 400 : 300}`,
+            }}
           >
             Profile
           </Typography>
@@ -88,16 +97,14 @@ export default function SideBar({
         >
           <SiJavascript
             size={25}
-            fill={currentCourse === 'javascript' ? '#FF6A3D' : '#F8F8FC'}
+            fill={currentRoute === 'javascript' ? '#FF6A3D' : '#F8F8FC'}
           />
           <Typography
             sx={{
-              color: `${
-                currentCourse === 'javascript' ? '#FF6A3D' : '#F8F8FC'
-              }`,
+              color: `${currentRoute === 'javascript' ? '#FF6A3D' : '#F8F8FC'}`,
               marginTop: '5px',
               fontSize: '14px',
-              fontWeight: `${currentCourse === 'javascript' ? 400 : 300}`,
+              fontWeight: `${currentRoute === 'javascript' ? 400 : 300}`,
             }}
           >
             JavaScript
@@ -123,16 +130,14 @@ export default function SideBar({
         >
           <SiTypescript
             size={25}
-            fill={currentCourse === 'typescript' ? '#FF6A3D' : '#F8F8FC'}
+            fill={currentRoute === 'typescript' ? '#FF6A3D' : '#F8F8FC'}
           />
           <Typography
             sx={{
-              color: `${
-                currentCourse === 'typescript' ? '#FF6A3D' : '#F8F8FC'
-              }`,
+              color: `${currentRoute === 'typescript' ? '#FF6A3D' : '#F8F8FC'}`,
               marginTop: '5px',
               fontSize: '14px',
-              fontWeight: `${currentCourse === 'typescript' ? 400 : 300}`,
+              fontWeight: `${currentRoute === 'typescript' ? 400 : 300}`,
             }}
           >
             TypeScript
@@ -158,14 +163,14 @@ export default function SideBar({
         >
           <SiReact
             size={25}
-            fill={currentCourse === 'react' ? '#FF6A3D' : '#F8F8FC'}
+            fill={currentRoute === 'react' ? '#FF6A3D' : '#F8F8FC'}
           />
           <Typography
             sx={{
-              color: `${currentCourse === 'react' ? '#FF6A3D' : '#F8F8FC'}`,
+              color: `${currentRoute === 'react' ? '#FF6A3D' : '#F8F8FC'}`,
               fontSize: '14px',
               marginTop: '5px',
-              fontWeight: `${currentCourse === 'react' ? 400 : 300}`,
+              fontWeight: `${currentRoute === 'react' ? 400 : 300}`,
             }}
           >
             React
@@ -197,8 +202,6 @@ export default function SideBar({
           Logout
         </Typography>
       </Box>
-
-      {/* <Searchbar /> */}
     </Box>
   );
 }
