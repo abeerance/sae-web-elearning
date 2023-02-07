@@ -27,7 +27,7 @@ export default function SideBar({
       sx={{
         width: `${session?.user ? sidebarWidth : 0}`,
         height: '100%',
-        background: '#1A2238',
+        backgroundImage: 'linear-gradient(to bottom, #18041D, #020204)',
         display: `${session?.user ? 'flex' : 'none'}`,
         flexDirection: 'column',
         padding: '30px 20px',

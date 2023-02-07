@@ -17,7 +17,6 @@ const webAppTheme = createTheme({
   },
   typography: {
     fontFamily: ['Outfit', 'sans-serif'].join(','),
-    fontSize: 16,
   },
 });
 

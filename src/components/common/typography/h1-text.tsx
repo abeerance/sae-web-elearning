@@ -12,9 +12,10 @@ export const H1Text = ({ text, hasMarginBottom, isCenter }: H1TextProps) => {
       <Typography
         variant="h1"
         sx={{
-          fontSize: '40px',
+          fontSize: '50px',
           fontWeight: 500,
           textAlign: `${isCenter ? 'center' : 'left'}`,
+          letterSpacing: '1px',
         }}
       >
         {text}

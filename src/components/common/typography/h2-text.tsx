@@ -8,7 +8,10 @@ type H2TextProps = {
 export const H2Text = ({ text, hasMarginBottom }: H2TextProps) => {
   return (
     <Box sx={{ marginBottom: `${hasMarginBottom ? '20px' : 0}` }}>
-      <Typography variant="h2" sx={{ fontSize: '30px', fontWeight: 500 }}>
+      <Typography
+        variant="h2"
+        sx={{ fontSize: '30px', fontWeight: 500, letterSpacing: '1px' }}
+      >
         {text}
       </Typography>
     </Box>
