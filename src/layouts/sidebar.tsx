@@ -2,27 +2,18 @@ import { Box, Typography } from '@mui/material';
 import { type Session } from 'next-auth';
 import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
-import React from 'react';
 import { FiUser } from 'react-icons/fi';
 import { MdOutlineLogout } from 'react-icons/md';
 import { SiJavascript, SiReact, SiTypescript } from 'react-icons/si';
 import { SaeLogo } from '../components/common/sae-logo/sae-logo';
-
 import { DisplayMode } from './display-mode';
 
 type SidebarProps = {
-  currentCourse: string | undefined;
-  setCurrentCourse: React.Dispatch<React.SetStateAction<string | undefined>>;
   session: Session | null;
   sidebarWidth: string;
 };
 
-export default function SideBar({
-  currentCourse,
-  setCurrentCourse,
-  session,
-  sidebarWidth,
-}: SidebarProps) {
+export default function SideBar({ session, sidebarWidth }: SidebarProps) {
   const router = useRouter();
   const currentRoute = router.pathname.split('/')[1];
 
@@ -56,8 +47,7 @@ export default function SideBar({
             cursor: 'pointer',
           }}
           onClick={() => {
-            if (currentCourse !== 'profile' && setCurrentCourse) {
-              setCurrentCourse('profile');
+            if (currentRoute !== 'profile') {
               router.push('/profile');
             }
           }}
@@ -89,8 +79,7 @@ export default function SideBar({
             cursor: 'pointer',
           }}
           onClick={() => {
-            if (currentCourse !== 'javascript' && setCurrentCourse) {
-              setCurrentCourse('javascript');
+            if (currentRoute !== 'javascript') {
               router.push('/javascript');
             }
           }}
@@ -122,8 +111,7 @@ export default function SideBar({
             cursor: 'pointer',
           }}
           onClick={() => {
-            if (currentCourse !== 'typescript' && setCurrentCourse) {
-              setCurrentCourse('typescript');
+            if (currentRoute !== 'typescript') {
               router.push('/typescript');
             }
           }}
@@ -155,8 +143,7 @@ export default function SideBar({
             cursor: 'pointer',
           }}
           onClick={() => {
-            if (currentCourse !== 'react' && setCurrentCourse) {
-              setCurrentCourse('react');
+            if (currentRoute !== 'react') {
               router.push('/react');
             }
           }}
