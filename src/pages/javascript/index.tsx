@@ -1,12 +1,14 @@
 import { Box } from '@mui/material';
 import { useState } from 'react';
 import { Module } from '../../components/modules/module';
+import { ModuleDisplay } from '../../components/screens/module-display';
 import { TopicOverview } from '../../components/topics/topic-overview';
 
 import { Globals } from '../../utils/utils';
 
 export default function JavaScriptHome() {
   const [isSearchActive, setIsSearchActive] = useState(false);
+  const [selectedSubModule, setSelectedSubModule] = useState<string>();
 
   return (
     <Box
@@ -46,6 +48,7 @@ export default function JavaScriptHome() {
               moduleIndex={element.index}
               moduleName={element.topic}
               moduleUrl={element.url}
+              setSelectedSubModule={setSelectedSubModule}
             />
           ))}
         </Box>
@@ -57,12 +60,16 @@ export default function JavaScriptHome() {
           borderRadius: '20px',
           backgroundImage: 'linear-gradient(to bottom, #0E1320, #020204)',
           overflowY: 'scroll',
-          padding: '25px 50px 0',
           position: 'sticky',
           top: 0,
           bottom: 0,
         }}
-      ></Box>
+      >
+        <ModuleDisplay
+          moduleName="javaScript"
+          subModuleName={selectedSubModule}
+        />
+      </Box>
     </Box>
   );
 }

@@ -21,7 +21,7 @@ const config = {
     defaultLocale: 'en',
   },
   images: {
-    domains: ['source.unsplash.com'],
+    domains: ['source.unsplash.com', 'media.graphassets.com'],
   },
 };
 export default config;

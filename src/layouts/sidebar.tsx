@@ -184,7 +184,11 @@ export default function SideBar({
           background: 'none',
           cursor: 'pointer',
         }}
-        onClick={() => void signOut()}
+        onClick={() => {
+          signOut();
+          router.push('/');
+          window.location.reload();
+        }}
       >
         <MdOutlineLogout size={25} fill="#F8F8FC" />
         <Typography

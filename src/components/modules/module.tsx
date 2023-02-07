@@ -1,16 +1,28 @@
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { Dispatch, SetStateAction } from 'react';
+import { capitalizeFirstLetter } from '../../utils/utils';
 
 type ModuleProps = {
   moduleName: string;
   moduleUrl: string;
   moduleIndex: number;
+  setSelectedSubModule: Dispatch<SetStateAction<string | undefined>>;
 };
 
-export const Module = ({ moduleName, moduleUrl, moduleIndex }: ModuleProps) => {
+export const Module = ({
+  moduleName,
+  moduleUrl,
+  moduleIndex,
+  setSelectedSubModule,
+}: ModuleProps) => {
+  const router = useRouter();
+
   return (
     <>
       <Box
+        component="button"
         sx={{
           width: '100%',
           height: '150px',
@@ -24,10 +36,12 @@ export const Module = ({ moduleName, moduleUrl, moduleIndex }: ModuleProps) => {
           boxShadow: 'rgba(0, 0, 0, 0.1) 0px 3px 8px',
           cursor: 'pointer',
         }}
+        onClick={() => setSelectedSubModule(moduleName)}
       >
         <Box
           sx={{
             width: '30%',
+            height: '120px',
             borderRadius: '15px',
             overflow: 'hidden',
             position: 'relative',
@@ -38,6 +52,9 @@ export const Module = ({ moduleName, moduleUrl, moduleIndex }: ModuleProps) => {
             alt="test"
             src={`https://source.unsplash.com/random/300x300&${moduleIndex}`}
             fill
+            sizes="(max-width: 768px) 100vw,
+            (max-width: 1200px) 50vw,
+            33vw"
           />
         </Box>
         <Box
@@ -51,24 +68,30 @@ export const Module = ({ moduleName, moduleUrl, moduleIndex }: ModuleProps) => {
             textOverflow: 'ellipsis',
           }}
         >
-          <Typography sx={{ color: '#F06B3E', fontSize: '17px' }}>
-            Modulename
+          <Typography
+            sx={{ color: '#F06B3E', fontSize: '17px', textAlign: 'left' }}
+          >
+            {capitalizeFirstLetter(moduleName)}
           </Typography>
           <Typography
-            sx={{ color: '#BBB9B9', marginTop: '5px', fontSize: '14px' }}
+            sx={{
+              color: '#BBB9B9',
+              marginTop: '5px',
+              fontSize: '14px',
+              textAlign: 'left',
+            }}
           >
             This will be the module descritpioais odhoah dihasoi dhoasd
             hioahdohaoid hoiahdiohas aiosdjaoidjaiodj aoidjaiodjaojd
             adjsaodijaodjad asjdoaisjdoa
           </Typography>
         </Box>
-
         {/* <Link
           className="module-navigation"
           href={`/javascript/${moduleName}`}
           replace
         >
-          <H2Text title={moduleName} moduleNames />
+          <H2Text text={moduleName} moduleNames />
         </Link> */}
       </Box>
     </>

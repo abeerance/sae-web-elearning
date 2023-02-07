@@ -53,7 +53,7 @@ export default function WebbAppLayout(props: ReactNode) {
             sx={{
               width: '100%',
               height: 'calc(100% - 30px)',
-              padding: '0 50px 30px',
+              padding: '0 30px 30px',
             }}
           >
             <Box
