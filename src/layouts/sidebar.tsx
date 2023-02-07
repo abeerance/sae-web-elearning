@@ -1,10 +1,12 @@
 import { Box, Typography } from '@mui/material';
 import { type Session } from 'next-auth';
+import { signOut } from 'next-auth/react';
 import React from 'react';
 import { FiUser } from 'react-icons/fi';
 import { MdOutlineLogout } from 'react-icons/md';
 import { SiJavascript, SiReact, SiTypescript } from 'react-icons/si';
-import SaeLogo from '../assets/sae_logo.webp';
+import { SaeLogo } from '../components/common/sae-logo/sae-logo';
+
 import { DisplayMode } from './display-mode';
 
 type SidebarProps = {
@@ -31,10 +33,11 @@ export default function SideBar({
         padding: '30px 20px',
         justifyContent: 'space-between',
         alignItems: 'center',
+        position: 'relative',
       }}
     >
       <Box>
-        <img src={SaeLogo.src} />
+        <SaeLogo />
       </Box>
       <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
         <Box
@@ -164,6 +167,7 @@ export default function SideBar({
           background: 'none',
           cursor: 'pointer',
         }}
+        onClick={() => void signOut()}
       >
         <MdOutlineLogout size={25} fill="#F8F8FC" />
         <Typography

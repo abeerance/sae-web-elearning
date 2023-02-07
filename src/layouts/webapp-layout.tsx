@@ -16,7 +16,7 @@ export default function WebbAppLayout(props: ReactNode) {
           height: '100%',
           display: 'flex',
           background: '#1A2238',
-          padding: `${sessionData?.user ? '15px 15px 15px 0' : '0'}`,
+          // padding: `${sessionData?.user ? '15px 15px 15px 0' : '0'}`,
         }}
       >
         <SideBar
@@ -30,10 +30,10 @@ export default function WebbAppLayout(props: ReactNode) {
             width: `${
               sessionData?.user ? `calc(100% - ${sidebarWidth})` : '100%'
             }`,
-            height: '100%',
-            borderRadius: `${sessionData?.user ? '30px' : 0}`,
+            borderRadius: `${sessionData?.user ? '20px' : 0}`,
             overflow: 'hidden',
             background: '#F8F8FB',
+            margin: '15px 15px 15px 0',
           }}
         >
           {/* @ts-expect-error: isdefined */}
