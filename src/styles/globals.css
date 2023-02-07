@@ -17,4 +17,15 @@
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+/*### ANIMATIONS ###*/
+.searchbar {
+  transition: all 0.5s;
+}
+
+.searchbar.searchbar-active {
+  right: 0;
+  width: 100%;
+  animation-direction: reverse;
 }/*# sourceMappingURL=globals.css.map */

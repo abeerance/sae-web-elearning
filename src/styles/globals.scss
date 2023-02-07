@@ -28,3 +28,15 @@
 //   display: flex;
 //   flex-direction: column;
 // }
+
+/*### ANIMATIONS ###*/
+
+.searchbar {
+  transition: all 0.5s;
+}
+
+.searchbar.searchbar-active {
+  right: 0;
+  width: 100%;
+  animation-direction: reverse;
+}

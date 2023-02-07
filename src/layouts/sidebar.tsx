@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { type Session } from 'next-auth';
 import { signOut } from 'next-auth/react';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { FiUser } from 'react-icons/fi';
 import { MdOutlineLogout } from 'react-icons/md';
@@ -10,8 +11,8 @@ import { SaeLogo } from '../components/common/sae-logo/sae-logo';
 import { DisplayMode } from './display-mode';
 
 type SidebarProps = {
-  currentCourse: string;
-  setCurrentCourse: React.Dispatch<React.SetStateAction<string>>;
+  currentCourse: string | undefined;
+  setCurrentCourse: React.Dispatch<React.SetStateAction<string | undefined>>;
   session: Session | null;
   sidebarWidth: string;
 };
@@ -22,6 +23,8 @@ export default function SideBar({
   session,
   sidebarWidth,
 }: SidebarProps) {
+  const router = useRouter();
+
   return (
     <Box
       sx={{
@@ -51,6 +54,12 @@ export default function SideBar({
             background: 'none',
             cursor: 'pointer',
           }}
+          onClick={() => {
+            if (currentCourse !== 'profile' && setCurrentCourse) {
+              setCurrentCourse('profile');
+              router.push('/profile');
+            }
+          }}
         >
           <FiUser size={25} stroke="#F8F8FC" />
           <Typography
@@ -73,6 +82,7 @@ export default function SideBar({
           onClick={() => {
             if (currentCourse !== 'javascript' && setCurrentCourse) {
               setCurrentCourse('javascript');
+              router.push('/javascript');
             }
           }}
         >
@@ -103,6 +113,12 @@ export default function SideBar({
             border: 'none',
             background: 'none',
             cursor: 'pointer',
+          }}
+          onClick={() => {
+            if (currentCourse !== 'typescript' && setCurrentCourse) {
+              setCurrentCourse('typescript');
+              router.push('/typescript');
+            }
           }}
         >
           <SiTypescript
@@ -136,6 +152,7 @@ export default function SideBar({
           onClick={() => {
             if (currentCourse !== 'react' && setCurrentCourse) {
               setCurrentCourse('react');
+              router.push('/react');
             }
           }}
         >

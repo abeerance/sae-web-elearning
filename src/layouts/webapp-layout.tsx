@@ -1,12 +1,15 @@
 import { Box } from '@mui/material';
 import { useSession } from 'next-auth/react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useState, type ReactNode } from 'react';
 import SideBar from './sidebar';
 
 export default function WebbAppLayout(props: ReactNode) {
   const { data: sessionData } = useSession();
-  const [currentCourse, setCurrentCourse] = useState('javascript');
+  const router = useRouter();
+  const topic = router.asPath.split('/')[1];
+  const [currentCourse, setCurrentCourse] = useState(topic);
   const sidebarWidth = '120px';
 
   return (
