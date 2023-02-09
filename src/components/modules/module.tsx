@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 import { Dispatch, SetStateAction } from 'react';
-import { capitalizeFirstLetter } from '../../utils/utils';
+import { capitalizeWords } from '../../utils/utils';
 
 type ModuleProps = {
   moduleName: string;
@@ -66,7 +66,7 @@ export const Module = ({
           <Typography
             sx={{ color: '#F06B3E', fontSize: '17px', textAlign: 'left' }}
           >
-            {capitalizeFirstLetter(moduleName)}
+            {capitalizeWords(moduleName)}
           </Typography>
           <Typography
             sx={{
