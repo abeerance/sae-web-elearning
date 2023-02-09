@@ -5,17 +5,22 @@ import { useRouter } from 'next/router';
 import { FiUser } from 'react-icons/fi';
 import { MdOutlineLogout } from 'react-icons/md';
 import { SiJavascript, SiReact, SiTypescript } from 'react-icons/si';
-import { SaeLogo } from '../components/common/sae-logo/sae-logo';
+import { SaeLogo } from '../common/sae-logo/sae-logo';
+
 import { DisplayMode } from './display-mode';
 
 type SidebarProps = {
   session: Session | null;
   sidebarWidth: string;
+  currentRoute: string | undefined;
 };
 
-export default function SideBar({ session, sidebarWidth }: SidebarProps) {
+export default function SideBar({
+  session,
+  sidebarWidth,
+  currentRoute,
+}: SidebarProps) {
   const router = useRouter();
-  const currentRoute = router.pathname.split('/')[1];
 
   return (
     <Box
