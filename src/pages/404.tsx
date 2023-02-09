@@ -1,7 +1,14 @@
 import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import dog from '../assets/404-img.png';
+import { ImageWrapper } from '../components/common/images/image-wrapper';
 
 export default function Custom404() {
+  const router = useRouter();
+  const currentRoute = router.asPath.split('/')[1];
+  console.log(currentRoute);
+
   return (
     <Box
       sx={{
@@ -10,21 +17,33 @@ export default function Custom404() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        maxWidth: '1600px',
+        borderRadius: '20px',
+        backgroundImage: 'linear-gradient(to bottom, #0E1320, #020204)',
       }}
     >
-      <Box sx={{ maxWidth: '700px' }}>
+      <Box
+        sx={{
+          width: '30%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
         <Typography
-          sx={{ marginBottom: '30px', fontSize: '60px', fontWeight: 700 }}
+          sx={{
+            marginBottom: '30px',
+            fontSize: '40px',
+            fontWeight: 700,
+            alignSelf: 'flex-start',
+          }}
         >
-          A Dog Ate this Page!
+          Oh no! A Dog Ate this Page!
         </Typography>
         <Typography
           sx={{
-            fontSize:
-              'calc(26px + (28 - 26) * ((100vw - 300px) / (1600 - 300)))',
-            lineHeight: '4.25rem',
-            marginBottom: '5rem',
+            fontSize: '20px',
+            marginBottom: '40px',
+            alignSelf: 'flex-start',
           }}
         >
           Your dog is cute but honestly a menace. Where are my shoes? Where is
@@ -36,23 +55,37 @@ export default function Custom404() {
           component="button"
           sx={{
             border: 'none',
-            boxShadow: '10px 9px 0 2px #EF6A04',
-            borderRadius: '10px',
-            fontSize: '40px',
-            padding: '2rem 4rem',
+            borderRadius: '9999px',
+            padding: '20px 30px',
             cursor: 'pointer',
+            background:
+              'linear-gradient(201deg, rgba(255,106,61,1) 0%, rgba(154,65,38,1) 100%)',
+            alignSelf: 'flex-start',
           }}
         >
-          <Link href={'/javascript'}>Back to Home</Link>
+          <Link href={`/${currentRoute}`}>
+            <Typography
+              sx={{
+                textDecoration: 'none',
+                fontSize: '18px',
+                fontWeight: 500,
+                color: '#f8f8f8',
+              }}
+            >
+              Back to Module Overview
+            </Typography>
+          </Link>
         </Box>
       </Box>
-      {/* <ImageWrapper
-        source={dog}
-        description="Dog eating a piece of paper, 404 error page"
-        height="500px"
-        width="500px"
-        fixedWidth
-      /> */}
+      <Box sx={{ width: '30%' }}>
+        <ImageWrapper
+          source={dog}
+          description="Dog eating a piece of paper, 404 error page"
+          height="350px"
+          width="350px"
+          fixedWidth
+        />
+      </Box>
     </Box>
   );
 }

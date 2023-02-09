@@ -20,6 +20,14 @@
   display: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: currentColor;
+}
+
 .module-name {
   color: #f8f8fc;
 }
