@@ -1,13 +1,28 @@
 import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import dog from '../assets/404-img.png';
 import { ImageWrapper } from '../components/common/images/image-wrapper';
 
 export default function Custom404() {
   const router = useRouter();
   const currentRoute = router.asPath.split('/')[1];
-  console.log(currentRoute);
+  const [redirectRoute, setRedirectRoute] = useState<string>();
+  console.log(redirectRoute);
+
+  useEffect(() => {
+    if (
+      currentRoute === 'profile' ||
+      currentRoute === 'javascript' ||
+      currentRoute === 'typescript' ||
+      currentRoute === 'react'
+    ) {
+      setRedirectRoute(`/${currentRoute}`);
+    } else {
+      setRedirectRoute('/');
+    }
+  }, [currentRoute, setRedirectRoute]);
 
   return (
     <Box
@@ -63,7 +78,7 @@ export default function Custom404() {
             alignSelf: 'flex-start',
           }}
         >
-          <Link href={`/${currentRoute}`}>
+          <Link href={`${redirectRoute}`}>
             <Typography
               sx={{
                 textDecoration: 'none',
@@ -72,7 +87,9 @@ export default function Custom404() {
                 color: '#f8f8f8',
               }}
             >
-              Back to Module Overview
+              {redirectRoute === '/'
+                ? 'Back to home'
+                : 'Back to Module Overview'}
             </Typography>
           </Link>
         </Box>
