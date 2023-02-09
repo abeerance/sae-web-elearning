@@ -5,7 +5,7 @@ import { SubModuleDisplay } from '../../components/screens/sub-module-display';
 import { TopicOverview } from '../../components/topics/topic-overview';
 import { Globals } from '../../utils/utils';
 
-export default function JavaScriptModule() {
+export default function TypeScriptModule() {
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [selectedSubModule, setSelectedSubModule] = useState<string>();
 
@@ -20,14 +20,9 @@ export default function JavaScriptModule() {
         overflow: 'hidden',
       }}
     >
-      <Box
-        sx={{
-          position: 'relative',
-          overflowY: 'scroll',
-        }}
-      >
+      <Box sx={{ position: 'relative', overflowY: 'scroll' }}>
         <TopicOverview
-          topicName="JavaScript"
+          topicName="TypeScript"
           isSearchActive={isSearchActive}
           setIsSearchActive={setIsSearchActive}
         />
@@ -41,7 +36,7 @@ export default function JavaScriptModule() {
             padding: '20px 40px 0 0',
           }}
         >
-          {Globals.javaScriptSubModules.map((subModule) => (
+          {Globals.typeScriptSubModules.map((subModule) => (
             <Module
               key={subModule.index}
               moduleIndex={subModule.index}
@@ -63,7 +58,7 @@ export default function JavaScriptModule() {
         }}
       >
         <SubModuleDisplay
-          moduleName="javaScript"
+          moduleName="typeScript"
           subModuleName={selectedSubModule}
         />
       </Box>

@@ -6,15 +6,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { capitalizeFirstLetter } from '../../utils/utils';
 
-type ModuleDisplayProps = {
+type SubModuleDisplayProps = {
   moduleName: string;
   subModuleName: string | undefined;
 };
 
-export const ModuleDisplay = ({
+export const SubModuleDisplay = ({
   moduleName,
   subModuleName,
-}: ModuleDisplayProps) => {
+}: SubModuleDisplayProps) => {
   // Needed for dynamic graphql query
   const activeModule = `${capitalizeFirstLetter(moduleName)}Modules`;
   const lowerCaseActiveModule = `${moduleName}Modules`;

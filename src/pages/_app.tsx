@@ -24,7 +24,6 @@ const webAppTheme = createTheme({
 
 export default function MyApp({ Component, pageProps, session }: Props) {
   const getLayout = Component.getLayout ?? ((page) => page);
-  const Layout = Component.layout ?? WebbAppLayout;
 
   return (
     <SessionProvider session={session}>

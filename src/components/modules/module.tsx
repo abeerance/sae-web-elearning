@@ -1,24 +1,19 @@
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import { Dispatch, SetStateAction } from 'react';
-import { capitalizeFirstLetter } from '../../utils/utils';
+import { capitalizeWords } from '../../utils/utils';
 
 type ModuleProps = {
   moduleName: string;
-  moduleUrl: string;
   moduleIndex: number;
   setSelectedSubModule: Dispatch<SetStateAction<string | undefined>>;
 };
 
 export const Module = ({
   moduleName,
-  moduleUrl,
   moduleIndex,
   setSelectedSubModule,
 }: ModuleProps) => {
-  const router = useRouter();
-
   return (
     <>
       <Box
@@ -71,7 +66,7 @@ export const Module = ({
           <Typography
             sx={{ color: '#F06B3E', fontSize: '17px', textAlign: 'left' }}
           >
-            {capitalizeFirstLetter(moduleName)}
+            {capitalizeWords(moduleName)}
           </Typography>
           <Typography
             sx={{

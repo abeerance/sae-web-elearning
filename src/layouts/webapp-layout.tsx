@@ -1,12 +1,15 @@
 import { Box } from '@mui/material';
 import { useSession } from 'next-auth/react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { type ReactNode } from 'react';
-import SideBar from './sidebar';
+import SideBar from '../components/navigation/sidebar';
 
 export default function WebbAppLayout(props: ReactNode) {
   const { data: sessionData } = useSession();
   const sidebarWidth = '120px';
+  const router = useRouter();
+  const currentRoute = router.pathname.split('/')[1];
 
   return (
     <>
@@ -26,7 +29,11 @@ export default function WebbAppLayout(props: ReactNode) {
           backgroundImage: 'linear-gradient(to bottom, #0F131F, #020204)',
         }}
       >
-        <SideBar session={sessionData} sidebarWidth={sidebarWidth} />
+        <SideBar
+          session={sessionData}
+          sidebarWidth={sidebarWidth}
+          currentRoute={currentRoute}
+        />
         <Box
           component="main"
           sx={{
