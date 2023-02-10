@@ -4,25 +4,24 @@ import { Box, Typography } from '@mui/material';
 import { t } from 'i18next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { capitalizeFirstLetter } from '../../utils/utils';
 
 type SubModuleDisplayProps = {
+  schemaName: string;
   moduleName: string;
   subModuleName: string | undefined;
 };
 
 export const SubModuleDisplay = ({
+  schemaName,
   moduleName,
   subModuleName,
 }: SubModuleDisplayProps) => {
   // Needed for dynamic graphql query
-  const activeModule = `${capitalizeFirstLetter(moduleName)}Modules`;
-  const lowerCaseActiveModule = `${moduleName}Modules`;
 
-  //   graphql query builder
+  // graphql query builder
   const MODULE_QUERY = gql`
-    query  ${activeModule} {
-      ${lowerCaseActiveModule}(where: { module: "${subModuleName}" }) {
+    query  ${schemaName} {
+      ${moduleName}(where: { module: "${subModuleName}" }) {
         module
         content {
           json
@@ -40,9 +39,11 @@ export const SubModuleDisplay = ({
 
   if (error) return <h1>{`Error! ${error}`}</h1>;
 
-  if (subModuleName === undefined) return <></>;
+  if (moduleName === undefined) return <></>;
 
-  if (queryCheck !== `{"${lowerCaseActiveModule}":[]}`) {
+  if (data && queryCheck !== `{"${moduleName}":[]}`) {
+    const content = data;
+    console.log(content);
     return (
       <Box
         sx={{

@@ -1,13 +1,27 @@
+import { gql, useQuery } from '@apollo/client';
 import { Box } from '@mui/material';
 import { useState } from 'react';
 import { Module } from '../../components/modules/module';
 import { SubModuleDisplay } from '../../components/screens/sub-module-display';
 import { TopicOverview } from '../../components/topics/topic-overview';
-import { Globals } from '../../utils/utils';
+import { moduleName, moduleSchema, SubModuleDto } from '../../types/types';
+
+// graphql query builder
+const MODULE_QUERY = gql`
+  query ReactModules {
+    reactModules {
+      id
+      module
+      moduleName
+      moduleDescription
+    }
+  }
+`;
 
 export default function ReactModule() {
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [selectedSubModule, setSelectedSubModule] = useState<string>();
+  const { data } = useQuery(MODULE_QUERY);
 
   return (
     <Box
@@ -36,14 +50,17 @@ export default function ReactModule() {
             padding: '20px 40px 0 0',
           }}
         >
-          {Globals.reactSubModules.map((subModule) => (
-            <Module
-              key={subModule.index}
-              moduleIndex={subModule.index}
-              moduleName={subModule.topic}
-              setSelectedSubModule={setSelectedSubModule}
-            />
-          ))}
+          {data ? (
+            data.reactModules.map((subModule: SubModuleDto) => (
+              <Module
+                key={subModule.id}
+                setSelectedSubModule={setSelectedSubModule}
+                subModule={subModule}
+              />
+            ))
+          ) : (
+            <></>
+          )}
         </Box>
       </Box>
       <Box
@@ -58,7 +75,8 @@ export default function ReactModule() {
         }}
       >
         <SubModuleDisplay
-          moduleName="react"
+          schemaName={moduleSchema.react}
+          moduleName={moduleName.react}
           subModuleName={selectedSubModule}
         />
       </Box>

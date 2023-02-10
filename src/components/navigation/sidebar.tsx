@@ -20,7 +20,6 @@ export default function SideBar({
   currentRoute,
 }: SidebarProps) {
   const router = useRouter();
-  console.log(router);
 
   return (
     <Box

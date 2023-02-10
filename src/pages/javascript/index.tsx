@@ -1,15 +1,29 @@
+import { gql, useQuery } from '@apollo/client';
 import { Box } from '@mui/material';
 import { useState } from 'react';
 import { Module } from '../../components/modules/module';
 import { SubModuleDisplay } from '../../components/screens/sub-module-display';
 import { TopicOverview } from '../../components/topics/topic-overview';
-import { Globals } from '../../utils/utils';
+import { moduleName, moduleSchema, SubModuleDto } from '../../types/types';
+
+// graphql query builder
+const MODULE_QUERY = gql`
+  query JavaScriptModules {
+    javaScriptModules {
+      id
+      module
+      moduleName
+      moduleDescription
+    }
+  }
+`;
 
 export default function JavaScriptModule() {
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [selectedSubModule, setSelectedSubModule] = useState<string>();
+  const { data } = useQuery(MODULE_QUERY);
 
-  return (
+  return data !== undefined ? (
     <Box
       sx={{
         width: '100%',
@@ -41,14 +55,17 @@ export default function JavaScriptModule() {
             padding: '20px 40px 0 0',
           }}
         >
-          {Globals.javaScriptSubModules.map((subModule) => (
-            <Module
-              key={subModule.index}
-              moduleIndex={subModule.index}
-              moduleName={subModule.topic}
-              setSelectedSubModule={setSelectedSubModule}
-            />
-          ))}
+          {data ? (
+            data.javaScriptModules.map((subModule: SubModuleDto) => (
+              <Module
+                key={subModule.id}
+                setSelectedSubModule={setSelectedSubModule}
+                subModule={subModule}
+              />
+            ))
+          ) : (
+            <></>
+          )}
         </Box>
       </Box>
       <Box
@@ -63,10 +80,13 @@ export default function JavaScriptModule() {
         }}
       >
         <SubModuleDisplay
-          moduleName="javaScript"
+          schemaName={moduleSchema.js}
+          moduleName={moduleName.js}
           subModuleName={selectedSubModule}
         />
       </Box>
     </Box>
+  ) : (
+    <></>
   );
 }

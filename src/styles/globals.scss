@@ -32,6 +32,13 @@ a:visited {
   color: #f8f8fc;
 }
 
+.desc-line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /*### ANIMATIONS ###*/
 
 .searchbar {
