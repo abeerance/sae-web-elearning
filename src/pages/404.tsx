@@ -9,7 +9,6 @@ export default function Custom404() {
   const router = useRouter();
   const currentRoute = router.asPath.split('/')[1];
   const [redirectRoute, setRedirectRoute] = useState<string>();
-  console.log(redirectRoute);
 
   useEffect(() => {
     if (

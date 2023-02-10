@@ -4,25 +4,26 @@ import { Box, Typography } from '@mui/material';
 import { t } from 'i18next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { capitalizeFirstLetter } from '../../utils/utils';
 
 type SubModuleDisplayProps = {
+  schemaName: string;
   moduleName: string;
   subModuleName: string | undefined;
+  content: any;
 };
 
 export const SubModuleDisplay = ({
+  schemaName,
   moduleName,
   subModuleName,
+  content,
 }: SubModuleDisplayProps) => {
   // Needed for dynamic graphql query
-  const activeModule = `${capitalizeFirstLetter(moduleName)}Modules`;
-  const lowerCaseActiveModule = `${moduleName}Modules`;
 
-  //   graphql query builder
+  // graphql query builder
   const MODULE_QUERY = gql`
-    query  ${activeModule} {
-      ${lowerCaseActiveModule}(where: { module: "${subModuleName}" }) {
+    query  ${schemaName} {
+      ${moduleName}(where: { module: "${subModuleName}" }) {
         module
         content {
           json
@@ -42,7 +43,7 @@ export const SubModuleDisplay = ({
 
   if (subModuleName === undefined) return <></>;
 
-  if (queryCheck !== `{"${lowerCaseActiveModule}":[]}`) {
+  if (data && queryCheck !== `{"${moduleName}":[]}`) {
     return (
       <Box
         sx={{
@@ -68,7 +69,7 @@ export const SubModuleDisplay = ({
             }}
           >
             <RichText
-              content={data.javaScriptModules[0].content.json}
+              content={content}
               renderers={{
                 h1: ({ children }) => (
                   <Box sx={{ width: '100%' }}>

@@ -1,19 +1,15 @@
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 import { Dispatch, SetStateAction } from 'react';
+import { SubModuleDto } from '../../types/types';
 import { capitalizeWords } from '../../utils/utils';
 
 type ModuleProps = {
-  moduleName: string;
-  moduleIndex: number;
   setSelectedSubModule: Dispatch<SetStateAction<string | undefined>>;
+  subModule: SubModuleDto;
 };
 
-export const Module = ({
-  moduleName,
-  moduleIndex,
-  setSelectedSubModule,
-}: ModuleProps) => {
+export const Module = ({ setSelectedSubModule, subModule }: ModuleProps) => {
   return (
     <>
       <Box
@@ -31,7 +27,7 @@ export const Module = ({
           boxShadow: 'rgba(0, 0, 0, 0.1) 0px 3px 8px',
           cursor: 'pointer',
         }}
-        onClick={() => setSelectedSubModule(moduleName)}
+        onClick={() => setSelectedSubModule(subModule.module)}
       >
         <Box
           sx={{
@@ -45,7 +41,7 @@ export const Module = ({
           {/* TODO: Implement real images and remove placeholder */}
           <Image
             alt="test"
-            src={`https://source.unsplash.com/random/300x300&${moduleIndex}`}
+            src={`https://source.unsplash.com/random/300x300&${subModule.id}`}
             fill
             sizes="(max-width: 768px) 100vw,
             (max-width: 1200px) 50vw,
@@ -66,9 +62,10 @@ export const Module = ({
           <Typography
             sx={{ color: '#F06B3E', fontSize: '17px', textAlign: 'left' }}
           >
-            {capitalizeWords(moduleName)}
+            {capitalizeWords(subModule.moduleName)}
           </Typography>
           <Typography
+            className="desc-line-clamp"
             sx={{
               color: '#BBB9B9',
               marginTop: '5px',
@@ -76,9 +73,7 @@ export const Module = ({
               textAlign: 'left',
             }}
           >
-            This will be the module descritpioais odhoah dihasoi dhoasd
-            hioahdohaoid hoiahdiohas aiosdjaoidjaiodj aoidjaiodjaojd
-            adjsaodijaodjad asjdoaisjdoa
+            {subModule.moduleDescription}
           </Typography>
         </Box>
       </Box>
