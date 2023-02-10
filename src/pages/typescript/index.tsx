@@ -1,6 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
 import { Box } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Module } from '../../components/modules/module';
 import { SubModuleDisplay } from '../../components/screens/sub-module-display';
 import { TopicOverview } from '../../components/topics/topic-overview';
@@ -21,8 +21,36 @@ const MODULE_QUERY = gql`
 export default function TypeScriptModule() {
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [selectedSubModule, setSelectedSubModule] = useState<string>();
+  const [selectedSubModuleContent, setSelectedSubModuleContent] =
+    useState<any>();
   const { data } = useQuery(MODULE_QUERY);
-  console.log(data);
+
+  // content graphqlquery
+  const CONTENT_QUERY = gql`
+  query ${moduleSchema.ts} {
+    ${moduleName.ts}(where: {module: "${selectedSubModule}"}){
+      module
+      content{
+        json
+      }
+    }
+  }
+`;
+
+  // graphqlquery, variable for check if submodule selected, variable for submodule content
+  const subModuleContent = useQuery(CONTENT_QUERY);
+  const subModuleData = subModuleContent.data;
+  const subModuleDataJSON = JSON.stringify(subModuleContent.data);
+
+  useEffect(() => {
+    if (subModuleDataJSON !== `{"typeScriptModules":[]}` && subModuleData) {
+      if (subModuleData.typeScriptModules[0].content !== null) {
+        setSelectedSubModuleContent(
+          subModuleData.typeScriptModules[0].content.json,
+        );
+      }
+    }
+  }, [subModuleData, subModuleDataJSON]);
 
   return data !== undefined ? (
     <Box
@@ -79,6 +107,7 @@ export default function TypeScriptModule() {
           schemaName={moduleSchema.ts}
           moduleName={moduleName.ts}
           subModuleName={selectedSubModule}
+          content={selectedSubModuleContent}
         />
       </Box>
     </Box>

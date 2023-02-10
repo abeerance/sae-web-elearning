@@ -3,6 +3,7 @@ export interface SubModuleDto {
   module: string;
   moduleName: string;
   moduleDescription: string;
+  subModuleContent?: {} | undefined;
 }
 
 export enum moduleSchema {

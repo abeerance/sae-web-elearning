@@ -9,12 +9,14 @@ type SubModuleDisplayProps = {
   schemaName: string;
   moduleName: string;
   subModuleName: string | undefined;
+  content: any;
 };
 
 export const SubModuleDisplay = ({
   schemaName,
   moduleName,
   subModuleName,
+  content,
 }: SubModuleDisplayProps) => {
   // Needed for dynamic graphql query
 
@@ -39,11 +41,9 @@ export const SubModuleDisplay = ({
 
   if (error) return <h1>{`Error! ${error}`}</h1>;
 
-  if (moduleName === undefined) return <></>;
+  if (subModuleName === undefined) return <></>;
 
   if (data && queryCheck !== `{"${moduleName}":[]}`) {
-    const content = data;
-    console.log(content);
     return (
       <Box
         sx={{
@@ -69,7 +69,7 @@ export const SubModuleDisplay = ({
             }}
           >
             <RichText
-              content={data.javaScriptModules[0].content.json}
+              content={content}
               renderers={{
                 h1: ({ children }) => (
                   <Box sx={{ width: '100%' }}>
