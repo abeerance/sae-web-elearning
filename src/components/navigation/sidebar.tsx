@@ -6,7 +6,6 @@ import { FiUser } from 'react-icons/fi';
 import { MdOutlineLogout } from 'react-icons/md';
 import { SiJavascript, SiReact, SiTypescript } from 'react-icons/si';
 import { SaeLogo } from '../common/sae-logo/sae-logo';
-
 import { DisplayMode } from './display-mode';
 
 type SidebarProps = {
@@ -21,6 +20,7 @@ export default function SideBar({
   currentRoute,
 }: SidebarProps) {
   const router = useRouter();
+  console.log(router);
 
   return (
     <Box
@@ -181,10 +181,10 @@ export default function SideBar({
           background: 'none',
           cursor: 'pointer',
         }}
-        onClick={() => {
-          signOut();
-          router.push('/');
-          window.location.reload();
+        onClick={async () => {
+          await router.push('/').then(() => {
+            signOut();
+          });
         }}
       >
         <MdOutlineLogout size={25} fill="#F8F8FC" />
